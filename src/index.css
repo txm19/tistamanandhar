@@ -118,6 +118,12 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-image: 
+      radial-gradient(at 20% 80%, hsl(262, 83%, 58%) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsl(282, 83%, 68%) 0px, transparent 50%),
+      radial-gradient(at 40% 40%, hsl(210, 100%, 70%) 0px, transparent 50%);
+    background-attachment: fixed;
+    background-size: 100% 100%;
   }
 
   html {

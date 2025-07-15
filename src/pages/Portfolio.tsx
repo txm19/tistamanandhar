@@ -25,21 +25,21 @@ const Portfolio = () => {
       title: 'SnApply',
       description: 'MERN stack voice-assisted job application platform with speech-to-text/text-to-speech capabilities and secure user profiles.',
       techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Speech API'],
-      link: '#',
+      link: 'https://github.com/txm19/SnApply',
       demo: '#'
     },
     {
       title: 'Celestial Connect',
       description: 'Real-time social media app with compatibility analysis tool using natal charts for enhanced user connections.',
       techStack: ['React', 'Socket.io', 'Node.js', 'PostgreSQL'],
-      link: '#',
+      link: 'https://github.com/txm19/CelestialConnectApp',
       demo: '#'
     },
     {
       title: 'PenDigits Classifier',
       description: 'Python-based k-NN and Naive Bayes pipeline achieving 95%+ accuracy on handwritten digit recognition.',
       techStack: ['Python', 'scikit-learn', 'NumPy', 'Matplotlib'],
-      link: '#',
+      link: 'https://github.com/txm19/pendigits-knn-and-bayes',
       demo: '#'
     },
     {
@@ -53,7 +53,7 @@ const Portfolio = () => {
       title: 'Lottery Scheduler & Filesystem',
       description: 'Kernel programming projects improving process scheduling and file encryption in xv6 OS.',
       techStack: ['C', 'xv6 OS', 'Kernel Development'],
-      link: '#',
+      link: 'https://github.com/txm19/lottery-scheduler',
       demo: '#'
     }
   ];
@@ -62,7 +62,7 @@ const Portfolio = () => {
     {
       title: 'International Student Assistant',
       company: 'University of Texas at Arlington',
-      period: '2023 - Present',
+      period: '2025 - Present',
       description: 'Supporting international students with immigration inquiries and paperwork, ensuring compliance with regulations.',
       achievements: [
         'Assisted 200+ international students with visa documentation',
@@ -73,7 +73,7 @@ const Portfolio = () => {
     {
       title: 'Global Engagement Student Assistant',
       company: 'University of Texas at Arlington',
-      period: '2022 - 2023',
+      period: '2024 - Present',
       description: 'Developing data dashboards, managing cultural exchange programs, and supporting international initiatives.',
       achievements: [
         'Built interactive dashboards tracking student engagement metrics',
@@ -82,14 +82,26 @@ const Portfolio = () => {
       ]
     },
     {
-      title: 'Peer Educator & AP Summer Institute Assistant',
-      company: 'Educational Outreach Program',
-      period: '2022',
-      description: 'Educational outreach, content creation, and event support for high school students.',
+      title: 'Advanced Placement Summer Institute Student Assistant',
+      company: 'University of Texas at Arlington',
+      period: 'June 2024 – July 2024',
+      description: 'Served as the liaison between professors and staff during AP training, managing communication and operations.',
       achievements: [
-        'Mentored 50+ students in computer science fundamentals',
-        'Created educational content viewed by 1000+ students',
-        'Achieved 95% student satisfaction rate'
+        'Served as the liaison between professors and staff during AP training, managing communication and fulfilling 100% of requests for smooth operations',
+        'Managed inventory and supplies, reducing last-minute shortages by 50% and demonstrating strong resource management',
+        'Organized and maintained training materials, contributing to a 100% satisfaction rate'
+      ]
+    },
+    {
+      title: 'Peer Educator',
+      company: 'University of Texas at Arlington',
+      period: 'September 2023 – May 2024',
+      description: 'Educational outreach, content creation, and event support focusing on domestic violence awareness.',
+      achievements: [
+        'Used data analysis to develop infographics on domestic violence, reaching 80 students and increasing awareness by 40%',
+        'Produced 10 posts and reels on Canva, boosting Instagram followers by 17% and expanding reach by 500',
+        'Conducted tabling and educational outreaches, boosting event participation by 35% through strategic engagement in high-traffic areas',
+        'Collaborated with team members to create status reports for outreach initiatives, ensuring alignment with program goals'
       ]
     }
   ];
@@ -218,10 +230,10 @@ const Portfolio = () => {
             <div className="animate-fade-in">
               <h1 className="text-sm text-primary font-medium mb-4">Hey, I'm Tista 👋</h1>
               <h2 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Computer Science
                 <span className="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Student
+                  Honors Computer Science Student
                 </span>
+                <span className="block">Aspiring Software Engineer</span>
               </h2>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl">
                 I'm a passionate Computer Science honors student at the University of Texas at Arlington, 
@@ -465,14 +477,14 @@ const Portfolio = () => {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Mail className="h-5 w-5 text-primary mr-4" />
-                  <a href="mailto:tista.manandhar@uta.edu" className="text-muted-foreground hover:text-primary transition-smooth">
-                    tista.manandhar@uta.edu
+                  <a href="mailto:manandhartista@gmail.com" className="text-muted-foreground hover:text-primary transition-smooth">
+                    manandhartista@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center">
                   <Phone className="h-5 w-5 text-primary mr-4" />
-                  <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-smooth">
-                    +1 (234) 567-8900
+                  <a href="tel:+12144299200" className="text-muted-foreground hover:text-primary transition-smooth">
+                    +1 (214) 429-9200
                   </a>
                 </div>
                 <div className="flex items-center">
@@ -485,17 +497,17 @@ const Portfolio = () => {
                 <h4 className="text-lg font-semibold mb-4">Find Me Online</h4>
                 <div className="flex space-x-4">
                   <Button variant="outline" size="icon" asChild>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/txm19" target="_blank" rel="noopener noreferrer">
                       <Github className="h-4 w-4" />
                     </a>
                   </Button>
                   <Button variant="outline" size="icon" asChild>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/tistamanandhar19/" target="_blank" rel="noopener noreferrer">
                       <Linkedin className="h-4 w-4" />
                     </a>
                   </Button>
                   <Button variant="outline" size="icon" asChild>
-                    <a href="mailto:tista.manandhar@uta.edu">
+                    <a href="mailto:manandhartista@gmail.com">
                       <Mail className="h-4 w-4" />
                     </a>
                   </Button>
@@ -551,17 +563,17 @@ const Portfolio = () => {
             </div>
             <div className="flex space-x-4">
               <Button variant="ghost" size="icon" asChild>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/txm19" target="_blank" rel="noopener noreferrer">
                   <Github className="h-4 w-4" />
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/tistamanandhar19/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-4 w-4" />
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="mailto:tista.manandhar@uta.edu">
+                <a href="mailto:manandhartista@gmail.com">
                   <Mail className="h-4 w-4" />
                 </a>
               </Button>
