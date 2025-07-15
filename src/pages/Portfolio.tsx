@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
-import profileImage from '@/assets/tista-profile.jpg';
+import profileImage from '@/assets/tista-profile-new.jpg';
 
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -257,14 +257,14 @@ const Portfolio = () => {
             </div>
             <div className="flex justify-center lg:justify-end animate-fade-in">
               <div className="relative">
-                <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-glow animate-float">
+                <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-glow animate-float border-4 border-primary/30">
                   <img 
                     src={profileImage} 
                     alt="Tista Manandhar" 
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-accent/20 animate-pulse-glow"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/10 to-accent/10"></div>
               </div>
             </div>
           </div>

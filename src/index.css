@@ -121,9 +121,42 @@ All colors MUST be HSL.
     background-image: 
       radial-gradient(at 20% 80%, hsl(262, 83%, 58%) 0px, transparent 50%),
       radial-gradient(at 80% 0%, hsl(282, 83%, 68%) 0px, transparent 50%),
-      radial-gradient(at 40% 40%, hsl(210, 100%, 70%) 0px, transparent 50%);
+      radial-gradient(at 40% 40%, hsl(210, 100%, 70%) 0px, transparent 50%),
+      /* CS-themed binary patterns */
+      linear-gradient(45deg, transparent 24%, rgba(108, 99, 255, 0.03) 25%, rgba(108, 99, 255, 0.03) 26%, transparent 27%, transparent 74%, rgba(108, 99, 255, 0.03) 75%, rgba(108, 99, 255, 0.03) 76%, transparent 77%),
+      linear-gradient(-45deg, transparent 24%, rgba(139, 92, 246, 0.02) 25%, rgba(139, 92, 246, 0.02) 26%, transparent 27%, transparent 74%, rgba(139, 92, 246, 0.02) 75%, rgba(139, 92, 246, 0.02) 76%, transparent 77%);
     background-attachment: fixed;
-    background-size: 100% 100%;
+    background-size: 100% 100%, 60px 60px, 60px 60px;
+    position: relative;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      /* Floating code symbols */
+      radial-gradient(circle at 10% 20%, rgba(108, 99, 255, 0.05) 1px, transparent 1px),
+      radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.04) 1px, transparent 1px),
+      radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+    background-size: 100px 100px, 150px 150px, 200px 200px;
+    animation: float-symbols 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  @keyframes float-symbols {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg);
+      opacity: 0.3;
+    }
+    50% { 
+      transform: translateY(-10px) rotate(180deg);
+      opacity: 0.1;
+    }
   }
 
   html {
