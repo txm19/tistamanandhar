@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail, Phone, ExternalLink, MapPin, Calendar, Code, Briefcase, GraduationCap, User, Send } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Phone, ExternalLink, MapPin, Calendar, Code, Briefcase, GraduationCap, User, Send, Users, BarChart3, BookOpen, Megaphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -73,26 +73,30 @@ const Portfolio = () => {
     title: 'International Student Assistant',
     company: 'University of Texas at Arlington',
     period: '2025 - Present',
-    description: 'Supporting international students with immigration inquiries and paperwork, ensuring compliance with regulations.',
-    achievements: ['Assisted 200+ international students with visa documentation', 'Streamlined immigration process reducing processing time by 30%', 'Maintained 98% accuracy in document verification']
+    impact: 'Delivered front-line support to international students, accelerating document turnaround time by 20%',
+    icon: Users,
+    skills: ['Immigration Policy', 'Customer Service', 'Documentation', 'Compliance']
   }, {
     title: 'Global Engagement Student Assistant',
-    company: 'University of Texas at Arlington',
+    company: 'University of Texas at Arlington', 
     period: '2024 - Present',
-    description: 'Developing data dashboards, managing cultural exchange programs, and supporting international initiatives.',
-    achievements: ['Built interactive dashboards tracking student engagement metrics', 'Coordinated 15+ cultural exchange events with 500+ participants', 'Improved data reporting efficiency by 40%']
+    impact: 'Developed Power BI dashboards for data-driven decision-making on international student programs',
+    icon: BarChart3,
+    skills: ['Power BI', 'Data Visualization', 'Canvas LMS', 'Program Management']
   }, {
     title: 'Advanced Placement Summer Institute Student Assistant',
     company: 'University of Texas at Arlington',
     period: 'June 2024 – July 2024',
-    description: 'Served as the liaison between professors and staff during AP training, managing communication and operations.',
-    achievements: ['Served as the liaison between professors and staff during AP training, managing communication and fulfilling 100% of requests for smooth operations', 'Managed inventory and supplies, reducing last-minute shortages by 50% and demonstrating strong resource management', 'Organized and maintained training materials, contributing to a 100% satisfaction rate']
+    impact: 'Managed communication and operations, achieving 100% satisfaction rate and reducing shortages by 50%',
+    icon: BookOpen,
+    skills: ['Operations Management', 'Communication', 'Inventory Management', 'Event Coordination']
   }, {
     title: 'Peer Educator',
     company: 'University of Texas at Arlington',
     period: 'September 2023 – May 2024',
-    description: 'Educational outreach, content creation, and event support focusing on domestic violence awareness.',
-    achievements: ['Used data analysis to develop infographics on domestic violence, reaching 80 students and increasing awareness by 40%', 'Produced 10 posts and reels on Canva, boosting Instagram followers by 17% and expanding reach by 500', 'Conducted tabling and educational outreaches, boosting event participation by 35% through strategic engagement in high-traffic areas', 'Collaborated with team members to create status reports for outreach initiatives, ensuring alignment with program goals']
+    impact: 'Created data-driven content reaching 80+ students, boosting event participation by 35%',
+    icon: Megaphone,
+    skills: ['Data Analysis', 'Content Creation', 'Canva', 'Social Media', 'Outreach']
   }];
   const skillCategories = [{
     title: 'Programming Languages',
@@ -313,35 +317,48 @@ const Portfolio = () => {
             </p>
           </div>
           
-          <div className="space-y-8">
-            {experiences.map((experience, index) => <Card key={index} className="project-card">
-                <CardHeader>
-                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                    <div>
-                      <CardTitle className="text-xl mb-2">{experience.title}</CardTitle>
-                      <div className="flex items-center text-primary mb-2">
-                        <Briefcase className="h-4 w-4 mr-2" />
-                        <span className="font-medium">{experience.company}</span>
-                      </div>
-                      <div className="flex items-center text-muted-foreground">
-                        <Calendar className="h-4 w-4 mr-2" />
-                        <span>{experience.period}</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {experiences.map((experience, index) => {
+              const IconComponent = experience.icon;
+              return (
+                <Card key={index} className="project-card">
+                  <CardHeader>
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <div className="flex items-center mb-3">
+                          <div className="p-2 rounded-lg bg-primary/10 mr-3">
+                            <IconComponent className="h-6 w-6 text-primary" />
+                          </div>
+                          <div>
+                            <CardTitle className="text-lg leading-tight">{experience.title}</CardTitle>
+                            <div className="flex items-center text-sm text-primary mt-1">
+                              <Briefcase className="h-3 w-3 mr-1" />
+                              {experience.company}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex items-center text-sm text-muted-foreground mb-3">
+                          <Calendar className="h-3 w-3 mr-1" />
+                          {experience.period}
+                        </div>
+                        <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                          {experience.impact}
+                        </p>
                       </div>
                     </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base mb-4">
-                    {experience.description}
-                  </CardDescription>
-                  <div className="space-y-2">
-                    {experience.achievements.map((achievement, achIndex) => <div key={achIndex} className="flex items-start">
-                        <div className="w-2 h-2 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></div>
-                        <span className="text-sm text-muted-foreground">{achievement}</span>
-                      </div>)}
-                  </div>
-                </CardContent>
-              </Card>)}
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      {experience.skills.map((skill, skillIndex) => (
+                        <Badge key={skillIndex} variant="secondary" className="skill-badge text-xs">
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
