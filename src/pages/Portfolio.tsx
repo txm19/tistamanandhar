@@ -6,6 +6,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import profileImage from '@/assets/tista-profile-new.jpg';
+import utaLogo from '@/assets/uta-logo.png';
+import apHonors from '@/assets/ap-honors.jpg';
 import emailjs from '@emailjs/browser';
 import { useToast } from '@/hooks/use-toast';
 const Portfolio = () => {
@@ -74,28 +76,28 @@ const Portfolio = () => {
     company: 'University of Texas at Arlington',
     period: '2025 - Present',
     impact: 'Delivered front-line support to international students, accelerating document turnaround time by 20%',
-    icon: Users,
+    icon: utaLogo,
     skills: ['Immigration Policy', 'Customer Service', 'Documentation', 'Compliance']
   }, {
     title: 'Global Engagement Student Assistant',
     company: 'University of Texas at Arlington', 
     period: '2024 - Present',
     impact: 'Developed Power BI dashboards for data-driven decision-making on international student programs',
-    icon: BarChart3,
+    icon: utaLogo,
     skills: ['Power BI', 'Data Visualization', 'Canvas LMS', 'Program Management']
   }, {
     title: 'Advanced Placement Summer Institute Student Assistant',
     company: 'University of Texas at Arlington',
     period: 'June 2024 – July 2024',
     impact: 'Managed communication and operations, achieving 100% satisfaction rate and reducing shortages by 50%',
-    icon: BookOpen,
+    icon: apHonors,
     skills: ['Operations Management', 'Communication', 'Inventory Management', 'Event Coordination']
   }, {
     title: 'Peer Educator',
     company: 'University of Texas at Arlington',
     period: 'September 2023 – May 2024',
     impact: 'Created data-driven content reaching 80+ students, boosting event participation by 35%',
-    icon: Megaphone,
+    icon: utaLogo,
     skills: ['Data Analysis', 'Content Creation', 'Canva', 'Social Media', 'Outreach']
   }];
   const skillCategories = [{
@@ -319,15 +321,14 @@ const Portfolio = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {experiences.map((experience, index) => {
-              const IconComponent = experience.icon;
               return (
                 <Card key={index} className="project-card">
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <div className="flex items-center mb-3">
-                          <div className="p-2 rounded-lg bg-primary/10 mr-3">
-                            <IconComponent className="h-6 w-6 text-primary" />
+                          <div className="p-2 rounded-lg bg-primary/10 mr-3 w-12 h-12 flex items-center justify-center">
+                            <img src={experience.icon} alt="" className="w-8 h-8 object-contain" />
                           </div>
                           <div>
                             <CardTitle className="text-lg leading-tight">{experience.title}</CardTitle>
