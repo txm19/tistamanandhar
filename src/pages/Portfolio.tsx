@@ -6,150 +6,123 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import profileImage from '@/assets/tista-profile-new.jpg';
-
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'education', label: 'Education' },
-    { id: 'contact', label: 'Contact' }
-  ];
-
-  const projects = [
-    {
-      title: 'SnApply',
-      description: 'MERN stack voice-assisted job application platform with speech-to-text/text-to-speech capabilities and secure user profiles.',
-      techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Speech API'],
-      link: 'https://github.com/txm19/SnApply',
-      demo: '#'
-    },
-    {
-      title: 'Celestial Connect',
-      description: 'Real-time social media app with compatibility analysis tool using natal charts for enhanced user connections.',
-      techStack: ['React', 'Socket.io', 'Node.js', 'PostgreSQL'],
-      link: 'https://github.com/txm19/CelestialConnectApp',
-      demo: '#'
-    },
-    {
-      title: 'PenDigits Classifier',
-      description: 'Python-based k-NN and Naive Bayes pipeline achieving 95%+ accuracy on handwritten digit recognition.',
-      techStack: ['Python', 'scikit-learn', 'NumPy', 'Matplotlib'],
-      link: 'https://github.com/txm19/pendigits-knn-and-bayes',
-      demo: '#'
-    },
-    {
-      title: 'TPC-H Benchmarking',
-      description: 'MySQL database performance profiling and optimization study with comprehensive analysis.',
-      techStack: ['MySQL', 'Python', 'Data Analysis'],
-      link: '#',
-      demo: '#'
-    },
-    {
-      title: 'Lottery Scheduler & Filesystem',
-      description: 'Kernel programming projects improving process scheduling and file encryption in xv6 OS.',
-      techStack: ['C', 'xv6 OS', 'Kernel Development'],
-      link: 'https://github.com/txm19/lottery-scheduler',
-      demo: '#'
-    }
-  ];
-
-  const experiences = [
-    {
-      title: 'International Student Assistant',
-      company: 'University of Texas at Arlington',
-      period: '2025 - Present',
-      description: 'Supporting international students with immigration inquiries and paperwork, ensuring compliance with regulations.',
-      achievements: [
-        'Assisted 200+ international students with visa documentation',
-        'Streamlined immigration process reducing processing time by 30%',
-        'Maintained 98% accuracy in document verification'
-      ]
-    },
-    {
-      title: 'Global Engagement Student Assistant',
-      company: 'University of Texas at Arlington',
-      period: '2024 - Present',
-      description: 'Developing data dashboards, managing cultural exchange programs, and supporting international initiatives.',
-      achievements: [
-        'Built interactive dashboards tracking student engagement metrics',
-        'Coordinated 15+ cultural exchange events with 500+ participants',
-        'Improved data reporting efficiency by 40%'
-      ]
-    },
-    {
-      title: 'Advanced Placement Summer Institute Student Assistant',
-      company: 'University of Texas at Arlington',
-      period: 'June 2024 – July 2024',
-      description: 'Served as the liaison between professors and staff during AP training, managing communication and operations.',
-      achievements: [
-        'Served as the liaison between professors and staff during AP training, managing communication and fulfilling 100% of requests for smooth operations',
-        'Managed inventory and supplies, reducing last-minute shortages by 50% and demonstrating strong resource management',
-        'Organized and maintained training materials, contributing to a 100% satisfaction rate'
-      ]
-    },
-    {
-      title: 'Peer Educator',
-      company: 'University of Texas at Arlington',
-      period: 'September 2023 – May 2024',
-      description: 'Educational outreach, content creation, and event support focusing on domestic violence awareness.',
-      achievements: [
-        'Used data analysis to develop infographics on domestic violence, reaching 80 students and increasing awareness by 40%',
-        'Produced 10 posts and reels on Canva, boosting Instagram followers by 17% and expanding reach by 500',
-        'Conducted tabling and educational outreaches, boosting event participation by 35% through strategic engagement in high-traffic areas',
-        'Collaborated with team members to create status reports for outreach initiatives, ensuring alignment with program goals'
-      ]
-    }
-  ];
-
-  const skillCategories = [
-    {
-      title: 'Programming Languages',
-      skills: ['Python', 'Java', 'C/C++', 'JavaScript', 'TypeScript', 'SQL']
-    },
-    {
-      title: 'Frameworks & Libraries',
-      skills: ['React', 'Node.js', 'Flask', 'FastAPI', 'Express', 'Material-UI']
-    },
-    {
-      title: 'Tools & Platforms',
-      skills: ['Git', 'Docker', 'Jenkins', 'Google Cloud Platform', 'AWS', 'MongoDB']
-    },
-    {
-      title: 'Data Analysis',
-      skills: ['pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'scikit-learn']
-    },
-    {
-      title: 'Web Development',
-      skills: ['HTML', 'CSS', 'Tailwind CSS', 'REST APIs', 'GraphQL']
-    },
-    {
-      title: 'Soft Skills',
-      skills: ['Problem-solving', 'Communication', 'Teamwork', 'Adaptability', 'Leadership']
-    }
-  ];
-
+  const navItems = [{
+    id: 'home',
+    label: 'Home'
+  }, {
+    id: 'projects',
+    label: 'Projects'
+  }, {
+    id: 'experience',
+    label: 'Experience'
+  }, {
+    id: 'skills',
+    label: 'Skills'
+  }, {
+    id: 'education',
+    label: 'Education'
+  }, {
+    id: 'contact',
+    label: 'Contact'
+  }];
+  const projects = [{
+    title: 'SnApply',
+    description: 'MERN stack voice-assisted job application platform with speech-to-text/text-to-speech capabilities and secure user profiles.',
+    techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Speech API'],
+    link: 'https://github.com/txm19/SnApply',
+    demo: '#'
+  }, {
+    title: 'Celestial Connect',
+    description: 'Real-time social media app with compatibility analysis tool using natal charts for enhanced user connections.',
+    techStack: ['React', 'Socket.io', 'Node.js', 'PostgreSQL'],
+    link: 'https://github.com/txm19/CelestialConnectApp',
+    demo: '#'
+  }, {
+    title: 'PenDigits Classifier',
+    description: 'Python-based k-NN and Naive Bayes pipeline achieving 95%+ accuracy on handwritten digit recognition.',
+    techStack: ['Python', 'scikit-learn', 'NumPy', 'Matplotlib'],
+    link: 'https://github.com/txm19/pendigits-knn-and-bayes',
+    demo: '#'
+  }, {
+    title: 'TPC-H Benchmarking',
+    description: 'MySQL database performance profiling and optimization study with comprehensive analysis.',
+    techStack: ['MySQL', 'Python', 'Data Analysis'],
+    link: '#',
+    demo: '#'
+  }, {
+    title: 'Lottery Scheduler & Filesystem',
+    description: 'Kernel programming projects improving process scheduling and file encryption in xv6 OS.',
+    techStack: ['C', 'xv6 OS', 'Kernel Development'],
+    link: 'https://github.com/txm19/lottery-scheduler',
+    demo: '#'
+  }];
+  const experiences = [{
+    title: 'International Student Assistant',
+    company: 'University of Texas at Arlington',
+    period: '2025 - Present',
+    description: 'Supporting international students with immigration inquiries and paperwork, ensuring compliance with regulations.',
+    achievements: ['Assisted 200+ international students with visa documentation', 'Streamlined immigration process reducing processing time by 30%', 'Maintained 98% accuracy in document verification']
+  }, {
+    title: 'Global Engagement Student Assistant',
+    company: 'University of Texas at Arlington',
+    period: '2024 - Present',
+    description: 'Developing data dashboards, managing cultural exchange programs, and supporting international initiatives.',
+    achievements: ['Built interactive dashboards tracking student engagement metrics', 'Coordinated 15+ cultural exchange events with 500+ participants', 'Improved data reporting efficiency by 40%']
+  }, {
+    title: 'Advanced Placement Summer Institute Student Assistant',
+    company: 'University of Texas at Arlington',
+    period: 'June 2024 – July 2024',
+    description: 'Served as the liaison between professors and staff during AP training, managing communication and operations.',
+    achievements: ['Served as the liaison between professors and staff during AP training, managing communication and fulfilling 100% of requests for smooth operations', 'Managed inventory and supplies, reducing last-minute shortages by 50% and demonstrating strong resource management', 'Organized and maintained training materials, contributing to a 100% satisfaction rate']
+  }, {
+    title: 'Peer Educator',
+    company: 'University of Texas at Arlington',
+    period: 'September 2023 – May 2024',
+    description: 'Educational outreach, content creation, and event support focusing on domestic violence awareness.',
+    achievements: ['Used data analysis to develop infographics on domestic violence, reaching 80 students and increasing awareness by 40%', 'Produced 10 posts and reels on Canva, boosting Instagram followers by 17% and expanding reach by 500', 'Conducted tabling and educational outreaches, boosting event participation by 35% through strategic engagement in high-traffic areas', 'Collaborated with team members to create status reports for outreach initiatives, ensuring alignment with program goals']
+  }];
+  const skillCategories = [{
+    title: 'Programming Languages',
+    skills: ['Python', 'Java', 'C/C++', 'JavaScript', 'TypeScript', 'SQL']
+  }, {
+    title: 'Frameworks & Libraries',
+    skills: ['React', 'Node.js', 'Flask', 'FastAPI', 'Express', 'Material-UI']
+  }, {
+    title: 'Tools & Platforms',
+    skills: ['Git', 'Docker', 'Jenkins', 'Google Cloud Platform', 'AWS', 'MongoDB']
+  }, {
+    title: 'Data Analysis',
+    skills: ['pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'scikit-learn']
+  }, {
+    title: 'Web Development',
+    skills: ['HTML', 'CSS', 'Tailwind CSS', 'REST APIs', 'GraphQL']
+  }, {
+    title: 'Soft Skills',
+    skills: ['Problem-solving', 'Communication', 'Teamwork', 'Adaptability', 'Leadership']
+  }];
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
     setIsMenuOpen(false);
   };
-
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map(item => item.id);
       const scrollPosition = window.scrollY + 100;
-
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
-          const { offsetTop, offsetHeight } = element;
+          const {
+            offsetTop,
+            offsetHeight
+          } = element;
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
             setActiveSection(section);
             break;
@@ -157,13 +130,10 @@ const Portfolio = () => {
         }
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 glass-effect">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -177,26 +147,15 @@ const Portfolio = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
-                {navItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className={`nav-link px-3 py-2 text-sm font-medium ${
-                      activeSection === item.id ? 'text-primary' : ''
-                    }`}
-                  >
+                {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`nav-link px-3 py-2 text-sm font-medium ${activeSection === item.id ? 'text-primary' : ''}`}>
                     {item.label}
-                  </button>
-                ))}
+                  </button>)}
               </div>
             </div>
 
             {/* Mobile menu button */}
             <div className="md:hidden">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-md text-foreground hover:text-primary transition-smooth"
-              >
+              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2 rounded-md text-foreground hover:text-primary transition-smooth">
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
@@ -204,23 +163,13 @@ const Portfolio = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden glass-effect">
+        {isMenuOpen && <div className="md:hidden glass-effect">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`block px-3 py-2 text-base font-medium w-full text-left transition-smooth ${
-                    activeSection === item.id ? 'text-primary' : 'text-foreground hover:text-primary'
-                  }`}
-                >
+              {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`block px-3 py-2 text-base font-medium w-full text-left transition-smooth ${activeSection === item.id ? 'text-primary' : 'text-foreground hover:text-primary'}`}>
                   {item.label}
-                </button>
-              ))}
+                </button>)}
             </div>
-          </div>
-        )}
+          </div>}
       </nav>
 
       {/* Hero Section */}
@@ -240,17 +189,10 @@ const Portfolio = () => {
                 focused on building impactful, user-focused solutions that blend creativity and technology.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  onClick={() => scrollToSection('projects')}
-                  className="btn-primary px-8 py-6 text-lg"
-                >
+                <Button onClick={() => scrollToSection('projects')} className="btn-primary px-8 py-6 text-lg">
                   View My Work
                 </Button>
-                <Button 
-                  onClick={() => scrollToSection('contact')}
-                  variant="outline"
-                  className="btn-secondary px-8 py-6 text-lg"
-                >
+                <Button onClick={() => scrollToSection('contact')} variant="outline" className="btn-secondary px-8 py-6 text-lg">
                   Get In Touch
                 </Button>
               </div>
@@ -258,11 +200,7 @@ const Portfolio = () => {
             <div className="flex justify-center lg:justify-end animate-fade-in">
               <div className="relative">
                 <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-glow animate-float border-4 border-primary/30">
-                  <img 
-                    src={profileImage} 
-                    alt="Tista Manandhar" 
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={profileImage} alt="Tista Manandhar" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/10 to-accent/10"></div>
               </div>
@@ -282,8 +220,7 @@ const Portfolio = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <Card key={index} className="project-card group">
+            {projects.map((project, index) => <Card key={index} className="project-card group">
                 <CardHeader>
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-xl">{project.title}</CardTitle>
@@ -306,15 +243,12 @@ const Portfolio = () => {
                     {project.description}
                   </CardDescription>
                   <div className="flex flex-wrap gap-2">
-                    {project.techStack.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary" className="skill-badge">
+                    {project.techStack.map((tech, techIndex) => <Badge key={techIndex} variant="secondary" className="skill-badge">
                         {tech}
-                      </Badge>
-                    ))}
+                      </Badge>)}
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -330,8 +264,7 @@ const Portfolio = () => {
           </div>
           
           <div className="space-y-8">
-            {experiences.map((experience, index) => (
-              <Card key={index} className="project-card">
+            {experiences.map((experience, index) => <Card key={index} className="project-card">
                 <CardHeader>
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
                     <div>
@@ -352,16 +285,13 @@ const Portfolio = () => {
                     {experience.description}
                   </CardDescription>
                   <div className="space-y-2">
-                    {experience.achievements.map((achievement, achIndex) => (
-                      <div key={achIndex} className="flex items-start">
+                    {experience.achievements.map((achievement, achIndex) => <div key={achIndex} className="flex items-start">
                         <div className="w-2 h-2 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></div>
                         <span className="text-sm text-muted-foreground">{achievement}</span>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -377,8 +307,7 @@ const Portfolio = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {skillCategories.map((category, index) => (
-              <Card key={index} className="project-card">
+            {skillCategories.map((category, index) => <Card key={index} className="project-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center">
                     <Code className="h-5 w-5 mr-2 text-primary" />
@@ -387,15 +316,12 @@ const Portfolio = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="secondary" className="skill-badge">
+                    {category.skills.map((skill, skillIndex) => <Badge key={skillIndex} variant="secondary" className="skill-badge">
                         {skill}
-                      </Badge>
-                    ))}
+                      </Badge>)}
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -440,18 +366,22 @@ const Portfolio = () => {
                     <h4 className="font-medium mb-2">Relevant Coursework:</h4>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>• Data Structures & Algorithms</li>
-                      <li>• Software Engineering</li>
-                      <li>• Database Systems</li>
-                      <li>• Operating Systems</li>
+                      <li>• Object-Oriented Programming</li>
+                      <li>• Database Systems and File Structures</li>
+                      <li>• Operating Systems
+• Information Security
+
+
+                    </li>
                     </ul>
                   </div>
                   <div>
                     <h4 className="font-medium mb-2">Activities:</h4>
                     <ul className="text-sm text-muted-foreground space-y-1">
-                      <li>• Computer Science Honors Society</li>
-                      <li>• Peer Education Program</li>
-                      <li>• International Student Support</li>
-                      <li>• Tech Mentorship Programs</li>
+                      <li>• Association of Computing Machinery (ACM)</li>
+                      <li>• Intermediate Technical Interview Prep Course (CodePath)</li>
+                      <li>• BreakThrough Tech AI Program (Cornell University)</li>
+                      <li>• Virtual Insight Series (Goldman Sachs)</li>
                     </ul>
                   </div>
                 </div>
@@ -581,8 +511,6 @@ const Portfolio = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Portfolio;
