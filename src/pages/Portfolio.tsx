@@ -6,9 +6,19 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import profileImage from '@/assets/tista-profile-new.jpg';
+import emailjs from '@emailjs/browser';
+import { useToast } from '@/hooks/use-toast';
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
   const navItems = [{
     id: 'home',
     label: 'Home'
@@ -111,6 +121,46 @@ const Portfolio = () => {
       });
     }
     setIsMenuOpen(false);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.send(
+        'service_w15xxlb',
+        'template_pziiyfu',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'manandhartista@gmail.com'
+        },
+        'Pfx75uK84sinrJM1g'
+      );
+
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   useEffect(() => {
     const handleScroll = () => {
@@ -453,27 +503,57 @@ const Portfolio = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
-                      <Input id="name" placeholder="Your Name" />
+                      <Input 
+                        id="name" 
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder="Your Name" 
+                        required 
+                      />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
-                      <Input id="email" type="email" placeholder="your.email@example.com" />
+                      <Input 
+                        id="email" 
+                        name="email"
+                        type="email" 
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder="your.email@example.com" 
+                        required 
+                      />
                     </div>
                   </div>
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium mb-2">Subject</label>
-                    <Input id="subject" placeholder="Project Discussion" />
+                    <Input 
+                      id="subject" 
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      placeholder="Project Discussion" 
+                      required 
+                    />
                   </div>
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
-                    <Textarea id="message" placeholder="Tell me about your project..." rows={4} />
+                    <Textarea 
+                      id="message" 
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder="Tell me about your project..." 
+                      rows={4} 
+                      required 
+                    />
                   </div>
-                  <Button type="submit" className="btn-primary w-full">
-                    Send Message
+                  <Button type="submit" className="btn-primary w-full" disabled={isSubmitting}>
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
                 </form>
               </CardContent>
