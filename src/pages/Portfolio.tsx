@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail, Phone, ExternalLink, MapPin, Calendar, Code, Briefcase, GraduationCap, User, Send, Users, BarChart3, BookOpen, Megaphone } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Phone, ExternalLink, MapPin, Calendar, Code, Briefcase, GraduationCap, User, Send, Users, BarChart3, BookOpen, Megaphone, Award, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -273,8 +273,9 @@ const Portfolio = () => {
                 <Button 
                   onClick={() => {
                     const link = document.createElement('a');
-                    link.href = resumeImage;
-                    link.download = 'Tista_Manandhar_Resume.png';
+                    link.href = 'https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:e85ef68c-f1a4-40fb-8fec-c3ae8b93bafc';
+                    link.download = 'Tista_Manandhar_Resume.pdf';
+                    link.target = '_blank';
                     link.click();
                   }} 
                   variant="outline" 
@@ -433,80 +434,99 @@ const Portfolio = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 px-4 bg-surface-elevated">
+      <section id="education" className="py-20 px-4 bg-muted/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="section-title">Education.</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              My academic journey and achievements.
+              My academic journey and achievements in computer science.
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto">
-            <Card className="project-card overflow-hidden">
-              <div className="relative">
-                <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-primary to-accent"></div>
-                <CardHeader className="pl-8">
-                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                    <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                        <img src={utaLogo} alt="UTA" className="w-10 h-10 object-contain" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-2xl mb-1">Bachelor of Science in Computer Science</CardTitle>
-                        <div className="text-primary font-medium">University of Texas at Arlington</div>
-                        <div className="text-muted-foreground text-sm">2022 - 2026 (Expected)</div>
-                      </div>
+          <div className="max-w-5xl mx-auto space-y-8">
+            {/* Main Education Card */}
+            <Card className="p-8 shadow-lg border-l-4 border-l-primary">
+              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                <div className="flex items-start gap-4 flex-1">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <GraduationCap className="h-8 w-8 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <h3 className="text-2xl font-bold text-foreground">Bachelor of Science in Computer Science</h3>
                     </div>
-                    <div className="text-right">
+                    <div className="text-primary font-medium text-lg mb-1">University of Texas at Arlington</div>
+                    <div className="text-muted-foreground mb-4">Expected Graduation: May 2026</div>
+                    <div className="flex flex-wrap gap-2">
                       <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
                         Honors Program
                       </Badge>
+                      <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20">
+                        Junior Year
+                      </Badge>
                     </div>
                   </div>
-                </CardHeader>
-                <CardContent className="pl-8">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div>
-                      <h4 className="font-semibold text-lg mb-3 flex items-center">
-                        <Code className="h-5 w-5 mr-2 text-primary" />
-                        Relevant Coursework
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {[
-                          'Data Structures & Algorithms',
-                          'Object-Oriented Programming', 
-                          'Database Systems',
-                          'Operating Systems',
-                          'Information Security',
-                          'Software Engineering'
-                        ].map((course, index) => (
-                          <Badge key={index} variant="outline" className="text-xs">
-                            {course}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg mb-3 flex items-center">
-                        <User className="h-5 w-5 mr-2 text-primary" />
-                        Activities & Programs
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {[
-                          'ACM Member',
-                          'CodePath Program',
-                          'BreakThrough Tech AI',
-                          'Goldman Sachs Series'
-                        ].map((activity, index) => (
-                          <Badge key={index} variant="secondary" className="text-xs">
-                            {activity}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
+                </div>
+                <div className="text-right">
+                  <div className="text-sm text-muted-foreground mb-1">2022 - 2026</div>
+                  <div className="text-2xl font-bold text-primary">GPA: 3.8/4.0</div>
+                </div>
+              </div>
+            </Card>
+
+            {/* Achievement Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="p-6 text-center hover:shadow-lg transition-shadow border-green-200 bg-green-50/50">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Award className="h-6 w-6 text-green-600" />
+                </div>
+                <h4 className="font-semibold text-lg mb-2">Dean's List</h4>
+                <p className="text-sm text-muted-foreground">
+                  Achieved Dean's List recognition for academic excellence
+                </p>
+              </Card>
+              
+              <Card className="p-6 text-center hover:shadow-lg transition-shadow border-blue-200 bg-blue-50/50">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <GraduationCap className="h-6 w-6 text-blue-600" />
+                </div>
+                <h4 className="font-semibold text-lg mb-2">Honors Program</h4>
+                <p className="text-sm text-muted-foreground">
+                  Selected for the competitive Computer Science Honors Program
+                </p>
+              </Card>
+              
+              <Card className="p-6 text-center hover:shadow-lg transition-shadow border-purple-200 bg-purple-50/50">
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Star className="h-6 w-6 text-purple-600" />
+                </div>
+                <h4 className="font-semibold text-lg mb-2">Academic Excellence</h4>
+                <p className="text-sm text-muted-foreground">
+                  Maintaining high GPA while actively participating in research and extracurriculars
+                </p>
+              </Card>
+            </div>
+
+            {/* Relevant Coursework */}
+            <Card className="p-8">
+              <h3 className="text-xl font-bold mb-6">Relevant Coursework</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  'Data Structures & Algorithms',
+                  'Software Engineering', 
+                  'Database Systems',
+                  'Operating Systems',
+                  'Computer Networks',
+                  'Machine Learning',
+                  'Web Development',
+                  'Computer Architecture',
+                  'Software Design Patterns',
+                  'Cybersecurity Fundamentals'
+                ].map((course, index) => (
+                  <div key={index} className="p-3 bg-muted/50 rounded-lg text-center text-sm font-medium hover:bg-muted transition-colors">
+                    {course}
                   </div>
-                </CardContent>
+                ))}
               </div>
             </Card>
           </div>
