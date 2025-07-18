@@ -8,6 +8,13 @@ import { Badge } from '@/components/ui/badge';
 import profileImage from '@/assets/tista-profile-new.jpg';
 import utaLogo from '@/assets/uta-logo.png';
 import apHonors from '@/assets/ap-honors.jpg';
+import snapplyImage from '@/assets/snapply-screenshot.png';
+import celestialImage from '@/assets/celestial-connect.jpg';
+import pendigitsImage from '@/assets/pendigits-classifier.jpg';
+import tpchImage from '@/assets/tpc-h-benchmark.jpg';
+import lotteryImage from '@/assets/lottery-scheduler.png';
+import puzzleImage from '@/assets/8-puzzle-solver.jpg';
+import resumeImage from '@/assets/resume.png';
 import emailjs from '@emailjs/browser';
 import { useToast } from '@/hooks/use-toast';
 const Portfolio = () => {
@@ -45,31 +52,43 @@ const Portfolio = () => {
     description: 'MERN stack voice-assisted job application platform with speech-to-text/text-to-speech capabilities and secure user profiles.',
     techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Speech API'],
     link: 'https://github.com/txm19/SnApply',
-    demo: '#'
+    demo: '#',
+    image: snapplyImage
   }, {
     title: 'Celestial Connect',
     description: 'Real-time social media app with compatibility analysis tool using natal charts for enhanced user connections.',
     techStack: ['React', 'Socket.io', 'Node.js', 'PostgreSQL'],
     link: 'https://github.com/txm19/CelestialConnectApp',
-    demo: '#'
+    demo: '#',
+    image: celestialImage
   }, {
     title: 'PenDigits Classifier',
     description: 'Python-based k-NN and Naive Bayes pipeline achieving 95%+ accuracy on handwritten digit recognition.',
     techStack: ['Python', 'scikit-learn', 'NumPy', 'Matplotlib'],
     link: 'https://github.com/txm19/pendigits-knn-and-bayes',
-    demo: '#'
+    demo: '#',
+    image: pendigitsImage
   }, {
     title: 'TPC-H Benchmarking',
     description: 'MySQL database performance profiling and optimization study with comprehensive analysis.',
     techStack: ['MySQL', 'Python', 'Data Analysis'],
     link: '#',
-    demo: '#'
+    demo: '#',
+    image: tpchImage
   }, {
     title: 'Lottery Scheduler & Filesystem',
     description: 'Kernel programming projects improving process scheduling and file encryption in xv6 OS.',
     techStack: ['C', 'xv6 OS', 'Kernel Development'],
     link: 'https://github.com/txm19/lottery-scheduler',
-    demo: '#'
+    demo: '#',
+    image: lotteryImage
+  }, {
+    title: '8-Puzzle Solver',
+    description: 'AI search algorithms implementation for solving 8-puzzle using A*, BFS, DFS, and other search strategies.',
+    techStack: ['Python', 'AI Algorithms', 'Search Strategies'],
+    link: 'https://github.com/txm19/8-puzzle-solver',
+    demo: '#',
+    image: puzzleImage
   }];
   const experiences = [{
     title: 'International Student Assistant',
@@ -251,6 +270,18 @@ const Portfolio = () => {
                 <Button onClick={() => scrollToSection('contact')} variant="outline" className="btn-secondary px-8 py-6 text-lg">
                   Get In Touch
                 </Button>
+                <Button 
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = resumeImage;
+                    link.download = 'Tista_Manandhar_Resume.png';
+                    link.click();
+                  }} 
+                  variant="outline" 
+                  className="btn-secondary px-8 py-6 text-lg"
+                >
+                  Download Resume
+                </Button>
               </div>
             </div>
             <div className="flex justify-center lg:justify-end animate-fade-in">
@@ -295,6 +326,13 @@ const Portfolio = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
+                  <div className="mb-4">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                    />
+                  </div>
                   <CardDescription className="text-base mb-4">
                     {project.description}
                   </CardDescription>
@@ -405,55 +443,71 @@ const Portfolio = () => {
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <Card className="project-card">
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <CardTitle className="text-2xl mb-2">Bachelor of Science in Computer Science</CardTitle>
-                    <div className="flex items-center text-primary mb-2">
-                      <GraduationCap className="h-5 w-5 mr-2" />
-                      <span className="font-medium">University of Texas at Arlington</span>
+            <Card className="project-card overflow-hidden">
+              <div className="relative">
+                <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-primary to-accent"></div>
+                <CardHeader className="pl-8">
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                        <img src={utaLogo} alt="UTA" className="w-10 h-10 object-contain" />
+                      </div>
+                      <div>
+                        <CardTitle className="text-2xl mb-1">Bachelor of Science in Computer Science</CardTitle>
+                        <div className="text-primary font-medium">University of Texas at Arlington</div>
+                        <div className="text-muted-foreground text-sm">2022 - 2026 (Expected)</div>
+                      </div>
                     </div>
-                    <div className="flex items-center text-muted-foreground">
-                      <Calendar className="h-4 w-4 mr-2" />
-                      <span>2022 - 2026 (Expected)</span>
+                    <div className="text-right">
+                      <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                        Honors Program
+                      </Badge>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <div className="text-sm text-muted-foreground">Honors Program</div>
+                </CardHeader>
+                <CardContent className="pl-8">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                      <h4 className="font-semibold text-lg mb-3 flex items-center">
+                        <Code className="h-5 w-5 mr-2 text-primary" />
+                        Relevant Coursework
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {[
+                          'Data Structures & Algorithms',
+                          'Object-Oriented Programming', 
+                          'Database Systems',
+                          'Operating Systems',
+                          'Information Security',
+                          'Software Engineering'
+                        ].map((course, index) => (
+                          <Badge key={index} variant="outline" className="text-xs">
+                            {course}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-lg mb-3 flex items-center">
+                        <User className="h-5 w-5 mr-2 text-primary" />
+                        Activities & Programs
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {[
+                          'ACM Member',
+                          'CodePath Program',
+                          'BreakThrough Tech AI',
+                          'Goldman Sachs Series'
+                        ].map((activity, index) => (
+                          <Badge key={index} variant="secondary" className="text-xs">
+                            {activity}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base mb-4">
-                  Currently pursuing a Bachelor's degree in Computer Science with honors distinction, 
-                  focusing on software engineering, algorithms, and system design.
-                </CardDescription>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <h4 className="font-medium mb-2">Relevant Coursework:</h4>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      <li>• Data Structures & Algorithms</li>
-                      <li>• Object-Oriented Programming</li>
-                      <li>• Database Systems and File Structures</li>
-                      <li>• Operating Systems
-• Information Security
-
-
-                    </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-medium mb-2">Activities:</h4>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      <li>• Association of Computing Machinery (ACM)</li>
-                      <li>• Intermediate Technical Interview Prep Course (CodePath)</li>
-                      <li>• BreakThrough Tech AI Program (Cornell University)</li>
-                      <li>• Virtual Insight Series (Goldman Sachs)</li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
+                </CardContent>
+              </div>
             </Card>
           </div>
         </div>
