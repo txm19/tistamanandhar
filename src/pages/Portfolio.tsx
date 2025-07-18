@@ -27,7 +27,9 @@ const Portfolio = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const navItems = [{
     id: 'home',
     label: 'Home'
@@ -99,7 +101,7 @@ const Portfolio = () => {
     skills: ['Immigration Policy', 'Customer Service', 'Documentation', 'Compliance']
   }, {
     title: 'Global Engagement Student Assistant',
-    company: 'University of Texas at Arlington', 
+    company: 'University of Texas at Arlington',
     period: '2024 - Present',
     impact: 'Developed Power BI dashboards for data-driven decision-making on international student programs',
     icon: utaLogo,
@@ -147,41 +149,42 @@ const Portfolio = () => {
     }
     setIsMenuOpen(false);
   };
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const {
+      name,
+      value
+    } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
-      await emailjs.send(
-        'service_w15xxlb',
-        'template_pziiyfu',
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          to_email: 'manandhartista@gmail.com'
-        },
-        'Pfx75uK84sinrJM1g'
-      );
-
+      await emailjs.send('service_w15xxlb', 'template_pziiyfu', {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'manandhartista@gmail.com'
+      }, 'Pfx75uK84sinrJM1g');
       toast({
         title: "Message sent successfully!",
-        description: "Thank you for your message. I'll get back to you soon.",
+        description: "Thank you for your message. I'll get back to you soon."
       });
-
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
     } catch (error) {
       toast({
         title: "Failed to send message",
         description: "Please try again or contact me directly via email.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
@@ -270,17 +273,13 @@ const Portfolio = () => {
                 <Button onClick={() => scrollToSection('contact')} variant="outline" className="btn-secondary px-8 py-6 text-lg">
                   Get In Touch
                 </Button>
-                <Button 
-                  onClick={() => {
-                    const link = document.createElement('a');
-                    link.href = 'https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:e85ef68c-f1a4-40fb-8fec-c3ae8b93bafc';
-                    link.download = 'Tista_Manandhar_Resume.pdf';
-                    link.target = '_blank';
-                    link.click();
-                  }} 
-                  variant="outline" 
-                  className="btn-secondary px-8 py-6 text-lg"
-                >
+                <Button onClick={() => {
+                const link = document.createElement('a');
+                link.href = 'https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:e85ef68c-f1a4-40fb-8fec-c3ae8b93bafc';
+                link.download = 'Tista_Manandhar_Resume.pdf';
+                link.target = '_blank';
+                link.click();
+              }} variant="outline" className="btn-secondary px-8 py-6 text-lg">
                   Download Resume
                 </Button>
               </div>
@@ -328,11 +327,7 @@ const Portfolio = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="mb-4">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow"
-                    />
+                    <img src={project.image} alt={project.title} className="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow" />
                   </div>
                   <CardDescription className="text-base mb-4">
                     {project.description}
@@ -360,8 +355,7 @@ const Portfolio = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {experiences.map((experience, index) => {
-              return (
-                <Card key={index} className="project-card">
+            return <Card key={index} className="project-card">
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
@@ -389,16 +383,13 @@ const Portfolio = () => {
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
-                      {experience.skills.map((skill, skillIndex) => (
-                        <Badge key={skillIndex} variant="secondary" className="skill-badge text-xs">
+                      {experience.skills.map((skill, skillIndex) => <Badge key={skillIndex} variant="secondary" className="skill-badge text-xs">
                           {skill}
-                        </Badge>
-                      ))}
+                        </Badge>)}
                     </div>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
         </div>
       </section>
@@ -461,15 +452,13 @@ const Portfolio = () => {
                       <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
                         Honors Program
                       </Badge>
-                      <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20">
-                        Junior Year
-                      </Badge>
+                      <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20">Senior Year</Badge>
                     </div>
                   </div>
                 </div>
                 <div className="text-right">
                   <div className="text-sm text-muted-foreground mb-1">2022 - 2026</div>
-                  <div className="text-2xl font-bold text-primary">GPA: 3.8/4.0</div>
+                  <div className="text-2xl font-bold text-primary">GPA: 3.66/4.0</div>
                 </div>
               </div>
             </Card>
@@ -511,22 +500,9 @@ const Portfolio = () => {
             <Card className="p-8">
               <h3 className="text-xl font-bold mb-6">Relevant Coursework</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {[
-                  'Data Structures & Algorithms',
-                  'Software Engineering', 
-                  'Database Systems',
-                  'Operating Systems',
-                  'Computer Networks',
-                  'Machine Learning',
-                  'Web Development',
-                  'Computer Architecture',
-                  'Software Design Patterns',
-                  'Cybersecurity Fundamentals'
-                ].map((course, index) => (
-                  <div key={index} className="p-3 bg-muted/50 rounded-lg text-center text-sm font-medium hover:bg-muted transition-colors">
+                {['Data Structures & Algorithms', 'Software Engineering', 'Database Systems', 'Operating Systems', 'Computer Networks', 'Machine Learning', 'Web Development', 'Computer Architecture', 'Software Design Patterns', 'Cybersecurity Fundamentals'].map((course, index) => <div key={index} className="p-3 bg-muted/50 rounded-lg text-center text-sm font-medium hover:bg-muted transition-colors">
                     {course}
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </Card>
           </div>
@@ -599,50 +575,20 @@ const Portfolio = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
-                      <Input 
-                        id="name" 
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Your Name" 
-                        required 
-                      />
+                      <Input id="name" name="name" value={formData.name} onChange={handleInputChange} placeholder="Your Name" required />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
-                      <Input 
-                        id="email" 
-                        name="email"
-                        type="email" 
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="your.email@example.com" 
-                        required 
-                      />
+                      <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} placeholder="your.email@example.com" required />
                     </div>
                   </div>
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium mb-2">Subject</label>
-                    <Input 
-                      id="subject" 
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      placeholder="Project Discussion" 
-                      required 
-                    />
+                    <Input id="subject" name="subject" value={formData.subject} onChange={handleInputChange} placeholder="Project Discussion" required />
                   </div>
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
-                    <Textarea 
-                      id="message" 
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Tell me about your project..." 
-                      rows={4} 
-                      required 
-                    />
+                    <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} placeholder="Tell me about your project..." rows={4} required />
                   </div>
                   <Button type="submit" className="btn-primary w-full" disabled={isSubmitting}>
                     {isSubmitting ? 'Sending...' : 'Send Message'}
