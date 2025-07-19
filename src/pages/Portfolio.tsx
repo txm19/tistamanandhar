@@ -272,10 +272,7 @@ const Portfolio = () => {
                 </span>
                 <span className="block">Aspiring Software Engineer</span>
               </h2>
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl">
-                I'm a passionate Computer Science honors student at the University of Texas at Arlington, 
-                focused on building impactful, user-focused solutions that blend creativity and technology.
-              </p>
+              <p className="text-xl text-muted-foreground mb-8 max-w-2xl">Driven Computer Science Honors student with a strong foundation in software development and a passion for creating innovative, user-centric solutions. I specialize in bridging technology and design to craft impactful digital experiences, combining technical depth with creative vision.</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button onClick={() => scrollToSection('projects')} className="btn-primary px-8 py-6 text-lg">
                   View My Work
