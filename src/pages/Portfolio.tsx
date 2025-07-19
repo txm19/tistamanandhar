@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail, Phone, ExternalLink, MapPin, Calendar, Code, Briefcase, GraduationCap, User, Send, Users, BarChart3, BookOpen, Megaphone, Award, Star } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Phone, ExternalLink, MapPin, Calendar, Code, Briefcase, GraduationCap, User, Send, Users, BarChart3, BookOpen, Megaphone, Award, Star, Globe, Server, Database, Palette, Brain, Monitor, Smartphone, Cloud, Shield, GitBranch, FileCode, Coffee, Heart, Users2, Target, Zap, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -95,14 +95,14 @@ const Portfolio = () => {
   const experiences = [{
     title: 'International Student Assistant',
     company: 'University of Texas at Arlington',
-    period: '2025 - Present',
+    period: 'May 2025 - August 2025',
     impact: 'Delivered front-line support to international students, accelerating document turnaround time by 20%',
     icon: utaLogo,
     skills: ['Immigration Policy', 'Customer Service', 'Documentation', 'Compliance']
   }, {
     title: 'Global Engagement Student Assistant',
     company: 'University of Texas at Arlington',
-    period: '2024 - Present',
+    period: 'October 2024 - Present',
     impact: 'Developed Power BI dashboards for data-driven decision-making on international student programs',
     icon: utaLogo,
     skills: ['Power BI', 'Data Visualization', 'Canvas LMS', 'Program Management']
@@ -123,21 +123,27 @@ const Portfolio = () => {
   }];
   const skillCategories = [{
     title: 'Programming Languages',
+    icon: FileCode,
     skills: ['Python', 'Java', 'C/C++', 'JavaScript', 'TypeScript', 'SQL']
   }, {
     title: 'Frameworks & Libraries',
+    icon: Code,
     skills: ['React', 'Node.js', 'Flask', 'FastAPI', 'Express', 'Material-UI']
   }, {
     title: 'Tools & Platforms',
+    icon: Cloud,
     skills: ['Git', 'Docker', 'Jenkins', 'Google Cloud Platform', 'AWS', 'MongoDB']
   }, {
     title: 'Data Analysis',
+    icon: BarChart3,
     skills: ['pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'scikit-learn']
   }, {
     title: 'Web Development',
+    icon: Monitor,
     skills: ['HTML', 'CSS', 'Tailwind CSS', 'REST APIs', 'GraphQL']
   }, {
     title: 'Soft Skills',
+    icon: Heart,
     skills: ['Problem-solving', 'Communication', 'Teamwork', 'Adaptability', 'Leadership']
   }];
   const scrollToSection = (sectionId: string) => {
@@ -270,7 +276,7 @@ const Portfolio = () => {
                 <Button onClick={() => scrollToSection('projects')} className="btn-primary px-8 py-6 text-lg">
                   View My Work
                 </Button>
-                <Button onClick={() => scrollToSection('contact')} variant="outline" className="btn-secondary px-8 py-6 text-lg">
+                <Button onClick={() => scrollToSection('contact')} className="btn-primary px-8 py-6 text-lg">
                   Get In Touch
                 </Button>
                 <Button onClick={() => {
@@ -279,7 +285,7 @@ const Portfolio = () => {
                 link.download = 'Tista_Manandhar_Resume.pdf';
                 link.target = '_blank';
                 link.click();
-              }} variant="outline" className="btn-secondary px-8 py-6 text-lg">
+              }} className="btn-primary px-8 py-6 text-lg">
                   Download Resume
                 </Button>
               </div>
@@ -407,8 +413,8 @@ const Portfolio = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {skillCategories.map((category, index) => <Card key={index} className="project-card">
                 <CardHeader>
-                  <CardTitle className="text-lg flex items-center">
-                    <Code className="h-5 w-5 mr-2 text-primary" />
+                <CardTitle className="text-lg flex items-center">
+                    <category.icon className="h-5 w-5 mr-2 text-primary" />
                     {category.title}
                   </CardTitle>
                 </CardHeader>
@@ -466,40 +472,100 @@ const Portfolio = () => {
 
             {/* Achievement Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="p-6 text-center hover:shadow-lg transition-shadow border-green-200 bg-green-50/50">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="h-6 w-6 text-green-600" />
+              <Card className="p-6 text-center hover:shadow-lg transition-shadow border-primary/20 bg-primary/5">
+                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Globe className="h-6 w-6 text-primary" />
                 </div>
-                <h4 className="font-semibold text-lg mb-2">ACM Member</h4>
+                <h4 className="font-semibold text-lg mb-2 text-foreground">ACM Member</h4>
                 <p className="text-sm text-muted-foreground">ACM Officer</p>
               </Card>
               
-              <Card className="p-6 text-center hover:shadow-lg transition-shadow border-blue-200 bg-blue-50/50">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <GraduationCap className="h-6 w-6 text-blue-600" />
+              <Card className="p-6 text-center hover:shadow-lg transition-shadow border-accent/20 bg-accent/5">
+                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <GraduationCap className="h-6 w-6 text-accent" />
                 </div>
-                <h4 className="font-semibold text-lg mb-2">Honors Program</h4>
+                <h4 className="font-semibold text-lg mb-2 text-foreground">Honors Program</h4>
                 <p className="text-sm text-muted-foreground">Accepted into the rigorous Computer Science Honors Program, designed for high-achieving students pursuing advanced coursework and research.</p>
               </Card>
               
-              <Card className="p-6 text-center hover:shadow-lg transition-shadow border-purple-200 bg-purple-50/50">
-                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Star className="h-6 w-6 text-purple-600" />
+              <Card className="p-6 text-center hover:shadow-lg transition-shadow border-primary/20 bg-primary/5">
+                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Star className="h-6 w-6 text-primary" />
                 </div>
-                <h4 className="font-semibold text-lg mb-2">Maverick Recognition Scholarship</h4>
+                <h4 className="font-semibold text-lg mb-2 text-foreground">Academic Excellence</h4>
                 <p className="text-sm text-muted-foreground">Earned the Maverick Recognition Scholarship for demonstrating strong academic excellence and university engagement.</p>
               </Card>
             </div>
 
             {/* Relevant Coursework */}
-            <Card className="p-8">
-              <h3 className="text-xl font-bold mb-6">Relevant Coursework</h3>
+            <div className="mb-8">
+              <h3 className="text-xl font-bold mb-6 text-foreground">Relevant Coursework</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {['Data Structures & Algorithms', 'Software Engineering', 'Database Systems', 'Operating Systems', 'Computer Networks', 'Machine Learning', 'Web Development', 'Computer Architecture', 'Software Design Patterns', 'Cybersecurity Fundamentals'].map((course, index) => <div key={index} className="p-3 bg-muted/50 rounded-lg text-center text-sm font-medium hover:bg-muted transition-colors">
-                    {course}
-                  </div>)}
+                {['Data Structures & Algorithms', 'Software Engineering', 'Database Systems', 'Operating Systems', 'Computer Networks', 'Machine Learning', 'Web Development', 'Computer Architecture', 'Software Design Patterns', 'Cybersecurity Fundamentals'].map((course, index) => 
+                  <Card key={index} className="p-3 text-center text-sm font-medium hover:shadow-card transition-all hover:scale-105 bg-card border-border/30">
+                    <span className="text-foreground">{course}</span>
+                  </Card>
+                )}
               </div>
-            </Card>
+            </div>
+
+            {/* Certifications & Additional Learning */}
+            <div>
+              <h3 className="text-xl font-bold mb-6 text-foreground">Certifications & Additional Learning</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
+                  <div className="flex items-start gap-4">
+                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-primary/10 flex items-center justify-center">
+                      <Code className="h-8 w-8 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-lg mb-1 text-foreground">Intermediate Technical Interview Prep Course</h4>
+                      <p className="text-primary font-medium mb-1">CodePath</p>
+                      <p className="text-sm text-muted-foreground mb-2">Issued Jun 2024 · Expired Aug 2024</p>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
+                  <div className="flex items-start gap-4">
+                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-accent/10 flex items-center justify-center">
+                      <Palette className="h-8 w-8 text-accent" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-lg mb-1 text-foreground">Graphic Designing</h4>
+                      <p className="text-primary font-medium mb-1">Global IT Skill Development Pvt.Ltd</p>
+                      <p className="text-sm text-muted-foreground mb-2">Issued Jun 2019</p>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
+                  <div className="flex items-start gap-4">
+                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-primary/10 flex items-center justify-center">
+                      <Brain className="h-8 w-8 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-lg mb-1 text-foreground">Break Through Tech AI Program</h4>
+                      <p className="text-primary font-medium mb-1">Cornell University</p>
+                      <p className="text-sm text-muted-foreground mb-2">2024</p>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
+                  <div className="flex items-start gap-4">
+                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-accent/10 flex items-center justify-center">
+                      <Lightbulb className="h-8 w-8 text-accent" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-lg mb-1 text-foreground">Virtual Insight Series</h4>
+                      <p className="text-primary font-medium mb-1">Goldman Sachs</p>
+                      <p className="text-sm text-muted-foreground mb-2">May 2025 - Jun 2025</p>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
