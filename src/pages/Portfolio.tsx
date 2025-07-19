@@ -471,7 +471,7 @@ const Portfolio = () => {
                   <Award className="h-6 w-6 text-green-600" />
                 </div>
                 <h4 className="font-semibold text-lg mb-2">ACM Member</h4>
-                <p className="text-sm text-muted-foreground">Engaged with the ACM student chapter at UTA to build connections, explore emerging technologies, and contribute to a vibrant tech community.</p>
+                <p className="text-sm text-muted-foreground">ACM Officer</p>
               </Card>
               
               <Card className="p-6 text-center hover:shadow-lg transition-shadow border-blue-200 bg-blue-50/50">
