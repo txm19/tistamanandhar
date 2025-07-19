@@ -458,7 +458,8 @@ const Portfolio = () => {
                 </div>
                 <div className="text-right">
                   <div className="text-sm text-muted-foreground mb-1">2022 - 2026</div>
-                  <div className="text-2xl font-bold text-primary">GPA: 3.66/4.0</div>
+                  <div className="text-2xl font-bold text-primary">
+                </div>
                 </div>
               </div>
             </Card>
@@ -469,10 +470,8 @@ const Portfolio = () => {
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Award className="h-6 w-6 text-green-600" />
                 </div>
-                <h4 className="font-semibold text-lg mb-2">Dean's List</h4>
-                <p className="text-sm text-muted-foreground">
-                  Achieved Dean's List recognition for academic excellence
-                </p>
+                <h4 className="font-semibold text-lg mb-2">ACM Member</h4>
+                <p className="text-sm text-muted-foreground">Engaged with the ACM student chapter at UTA to build connections, explore emerging technologies, and contribute to a vibrant tech community.</p>
               </Card>
               
               <Card className="p-6 text-center hover:shadow-lg transition-shadow border-blue-200 bg-blue-50/50">
@@ -480,19 +479,15 @@ const Portfolio = () => {
                   <GraduationCap className="h-6 w-6 text-blue-600" />
                 </div>
                 <h4 className="font-semibold text-lg mb-2">Honors Program</h4>
-                <p className="text-sm text-muted-foreground">
-                  Selected for the competitive Computer Science Honors Program
-                </p>
+                <p className="text-sm text-muted-foreground">Accepted into the rigorous Computer Science Honors Program, designed for high-achieving students pursuing advanced coursework and research.</p>
               </Card>
               
               <Card className="p-6 text-center hover:shadow-lg transition-shadow border-purple-200 bg-purple-50/50">
                 <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Star className="h-6 w-6 text-purple-600" />
                 </div>
-                <h4 className="font-semibold text-lg mb-2">Academic Excellence</h4>
-                <p className="text-sm text-muted-foreground">
-                  Maintaining high GPA while actively participating in research and extracurriculars
-                </p>
+                <h4 className="font-semibold text-lg mb-2">Maverick Recognition Scholarship</h4>
+                <p className="text-sm text-muted-foreground">Earned the Maverick Recognition Scholarship for demonstrating strong academic excellence and university engagement.</p>
               </Card>
             </div>
 
