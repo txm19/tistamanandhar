@@ -8,6 +8,10 @@ import { Badge } from '@/components/ui/badge';
 import profileImage from '@/assets/tista-profile-new.jpg';
 import utaLogo from '@/assets/uta-logo.png';
 import apHonors from '@/assets/ap-honors.jpg';
+import codepathCert from '@/assets/codepath-cert.png';
+import globalItCert from '@/assets/global-it-cert.png';
+import breakthroughCert from '@/assets/breakthrough-cert.png';
+import goldmanSachsCert from '@/assets/goldman-sachs-cert.png';
 import snapplyImage from '@/assets/snapply-screenshot.png';
 import celestialImage from '@/assets/celestial-connect.jpg';
 import pendigitsImage from '@/assets/pendigits-classifier.jpg';
@@ -501,9 +505,11 @@ const Portfolio = () => {
             <div className="mb-8">
               <h3 className="text-xl font-bold mb-6 text-foreground">Relevant Coursework</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {['Data Structures & Algorithms', 'Software Engineering', 'Database Systems', 'Operating Systems', 'Computer Networks', 'Machine Learning', 'Web Development', 'Computer Architecture', 'Software Design Patterns', 'Cybersecurity Fundamentals'].map((course, index) => <Card key={index} className="p-3 text-center text-sm font-medium hover:shadow-card transition-all hover:scale-105 bg-card border-border/30">
+                {['Data Structures & Algorithms', 'Software Engineering', 'Database Systems', 'Operating Systems', 'Computer Networks', 'Machine Learning', 'Web Development', 'Computer Architecture', 'Software Design Patterns', 'Cybersecurity Fundamentals'].map((course, index) => 
+                  <div key={index} className="p-4 rounded-lg text-center text-sm font-medium hover:shadow-lg transition-all hover:scale-105 bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 hover:border-primary/40">
                     <span className="text-foreground">{course}</span>
-                  </Card>)}
+                  </div>
+                )}
               </div>
             </div>
 
@@ -513,21 +519,21 @@ const Portfolio = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
                   <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-primary/10 flex items-center justify-center">
-                      <Code className="h-8 w-8 text-primary" />
+                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                      <img src={codepathCert} alt="CodePath Certificate" className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-lg mb-1 text-foreground">Intermediate Technical Interview Prep Course</h4>
                       <p className="text-primary font-medium mb-1">CodePath</p>
-                      <p className="text-sm text-muted-foreground mb-2">Issued Jun 2024 </p>
+                      <p className="text-sm text-muted-foreground mb-2">Issued Jun 2024 • Expired Aug 2024 </p>
                     </div>
                   </div>
                 </Card>
 
                 <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
                   <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-accent/10 flex items-center justify-center">
-                      <Palette className="h-8 w-8 text-accent" />
+                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                      <img src={globalItCert} alt="Global IT Certificate" className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-lg mb-1 text-foreground">Graphic Designing</h4>
@@ -539,8 +545,8 @@ const Portfolio = () => {
 
                 <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
                   <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-primary/10 flex items-center justify-center">
-                      <Brain className="h-8 w-8 text-primary" />
+                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                      <img src={breakthroughCert} alt="Break Through Tech Certificate" className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-lg mb-1 text-foreground">Break Through Tech AI Program</h4>
@@ -552,13 +558,13 @@ const Portfolio = () => {
 
                 <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
                   <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-accent/10 flex items-center justify-center">
-                      <Lightbulb className="h-8 w-8 text-accent" />
+                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                      <img src={goldmanSachsCert} alt="Goldman Sachs Certificate" className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-lg mb-1 text-foreground">Virtual Insight Series</h4>
                       <p className="text-primary font-medium mb-1">Goldman Sachs</p>
-                      <p className="text-sm text-muted-foreground mb-2">Issued Jun 2025</p>
+                      <p className="text-sm text-muted-foreground mb-2">May 2025 - Jun 2025</p>
                     </div>
                   </div>
                 </Card>
