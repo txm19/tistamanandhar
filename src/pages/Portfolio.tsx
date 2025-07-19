@@ -476,8 +476,8 @@ const Portfolio = () => {
                 <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Globe className="h-6 w-6 text-primary" />
                 </div>
-                <h4 className="font-semibold text-lg mb-2 text-foreground">ACM Member</h4>
-                <p className="text-sm text-muted-foreground">ACM Officer</p>
+                <h4 className="font-semibold text-lg mb-2 text-foreground">ACM Officer</h4>
+                <p className="text-sm text-muted-foreground">Engaged with the ACM student chapter at UTA to build connections, explore emerging technologies, and contribute to a vibrant tech community.</p>
               </Card>
               
               <Card className="p-6 text-center hover:shadow-lg transition-shadow border-accent/20 bg-accent/5">
@@ -492,7 +492,7 @@ const Portfolio = () => {
                 <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Star className="h-6 w-6 text-primary" />
                 </div>
-                <h4 className="font-semibold text-lg mb-2 text-foreground">Academic Excellence</h4>
+                <h4 className="font-semibold text-lg mb-2 text-foreground">Maverick Recognition Scholarship</h4>
                 <p className="text-sm text-muted-foreground">Earned the Maverick Recognition Scholarship for demonstrating strong academic excellence and university engagement.</p>
               </Card>
             </div>
@@ -501,11 +501,9 @@ const Portfolio = () => {
             <div className="mb-8">
               <h3 className="text-xl font-bold mb-6 text-foreground">Relevant Coursework</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {['Data Structures & Algorithms', 'Software Engineering', 'Database Systems', 'Operating Systems', 'Computer Networks', 'Machine Learning', 'Web Development', 'Computer Architecture', 'Software Design Patterns', 'Cybersecurity Fundamentals'].map((course, index) => 
-                  <Card key={index} className="p-3 text-center text-sm font-medium hover:shadow-card transition-all hover:scale-105 bg-card border-border/30">
+                {['Data Structures & Algorithms', 'Software Engineering', 'Database Systems', 'Operating Systems', 'Computer Networks', 'Machine Learning', 'Web Development', 'Computer Architecture', 'Software Design Patterns', 'Cybersecurity Fundamentals'].map((course, index) => <Card key={index} className="p-3 text-center text-sm font-medium hover:shadow-card transition-all hover:scale-105 bg-card border-border/30">
                     <span className="text-foreground">{course}</span>
-                  </Card>
-                )}
+                  </Card>)}
               </div>
             </div>
 
@@ -521,7 +519,7 @@ const Portfolio = () => {
                     <div className="flex-1">
                       <h4 className="font-semibold text-lg mb-1 text-foreground">Intermediate Technical Interview Prep Course</h4>
                       <p className="text-primary font-medium mb-1">CodePath</p>
-                      <p className="text-sm text-muted-foreground mb-2">Issued Jun 2024 · Expired Aug 2024</p>
+                      <p className="text-sm text-muted-foreground mb-2">Issued Jun 2024 </p>
                     </div>
                   </div>
                 </Card>
@@ -547,7 +545,7 @@ const Portfolio = () => {
                     <div className="flex-1">
                       <h4 className="font-semibold text-lg mb-1 text-foreground">Break Through Tech AI Program</h4>
                       <p className="text-primary font-medium mb-1">Cornell University</p>
-                      <p className="text-sm text-muted-foreground mb-2">2024</p>
+                      <p className="text-sm text-muted-foreground mb-2">May 2025 - April 2026</p>
                     </div>
                   </div>
                 </Card>
@@ -560,7 +558,7 @@ const Portfolio = () => {
                     <div className="flex-1">
                       <h4 className="font-semibold text-lg mb-1 text-foreground">Virtual Insight Series</h4>
                       <p className="text-primary font-medium mb-1">Goldman Sachs</p>
-                      <p className="text-sm text-muted-foreground mb-2">May 2025 - Jun 2025</p>
+                      <p className="text-sm text-muted-foreground mb-2">Issued Jun 2025</p>
                     </div>
                   </div>
                 </Card>
