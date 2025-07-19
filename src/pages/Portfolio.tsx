@@ -505,11 +505,9 @@ const Portfolio = () => {
             <div className="mb-8">
               <h3 className="text-xl font-bold mb-6 text-foreground">Relevant Coursework</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {['Data Structures & Algorithms', 'Software Engineering', 'Database Systems', 'Operating Systems', 'Computer Networks', 'Machine Learning', 'Web Development', 'Computer Architecture', 'Software Design Patterns', 'Cybersecurity Fundamentals'].map((course, index) => 
-                  <div key={index} className="p-4 rounded-lg text-center text-sm font-medium hover:shadow-lg transition-all hover:scale-105 bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 hover:border-primary/40">
+                {['Data Structures & Algorithms', 'Software Engineering', 'Database Systems', 'Operating Systems', 'Computer Networks', 'Machine Learning', 'Web Development', 'Computer Architecture', 'Software Design Patterns', 'Cybersecurity Fundamentals'].map((course, index) => <div key={index} className="p-4 rounded-lg text-center text-sm font-medium hover:shadow-lg transition-all hover:scale-105 bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 hover:border-primary/40">
                     <span className="text-foreground">{course}</span>
-                  </div>
-                )}
+                  </div>)}
               </div>
             </div>
 
@@ -525,7 +523,7 @@ const Portfolio = () => {
                     <div className="flex-1">
                       <h4 className="font-semibold text-lg mb-1 text-foreground">Intermediate Technical Interview Prep Course</h4>
                       <p className="text-primary font-medium mb-1">CodePath</p>
-                      <p className="text-sm text-muted-foreground mb-2">Issued Jun 2024 • Expired Aug 2024 </p>
+                      <p className="text-sm text-muted-foreground mb-2">Issued Jun 2024  </p>
                     </div>
                   </div>
                 </Card>
