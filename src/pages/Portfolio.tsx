@@ -282,7 +282,7 @@ const Portfolio = () => {
                 </Button>
                 <Button onClick={() => {
                 const link = document.createElement('a');
-                link.href = 'https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:9f356927-432d-47e1-bd87-7b30f21a56be';
+                link.href = 'file:///Users/tistamanandhar/Downloads/resipe%20(2).pdf';
                 link.download = 'Tista_Manandhar_Resume.pdf';
                 link.target = '_blank';
                 link.click();
@@ -522,7 +522,7 @@ const Portfolio = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
                   <div className="flex items-start gap-4">
-                    <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 cursor-pointer" onClick={() => window.open('chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://mail.google.com/mail/u/0?ui=2&ik=9351b70e2c&attid=0.1&permmsgid=msg-f:1808307197405038314&th=191865d0b21c06ea&view=att&disp=inline&realattid=bb2fa5da1e027396_0.1&zw&acrobatPromotionSource=GmailNativeViewer', '_blank')}>
+                    <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 cursor-pointer" onClick={() => window.open(codepathCert, '_blank')}>
                       <img src={codepathCert} alt="CodePath Certificate" className="w-full h-full object-cover hover:scale-105 transition-transform" />
                     </div>
                     <div className="flex-1">
