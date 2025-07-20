@@ -281,7 +281,7 @@ const Portfolio = () => {
                   Get In Touch
                 </Button>
                 <Button asChild className="btn-primary px-8 py-6 text-lg">
-                  <a href="file:///Users/tistamanandhar/Downloads/resipe%20(2).pdf" target="_blank" rel="noopener noreferrer">
+                  <a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:d8e92e07-09ea-4ce0-8420-e4bba7abba0c" target="_blank" rel="noopener noreferrer">
                     Download Resume
                   </a>
                 </Button>
