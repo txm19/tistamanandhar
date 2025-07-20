@@ -510,7 +510,7 @@ const Portfolio = () => {
             <div className="mb-8">
               <h3 className="text-xl font-bold mb-6 text-foreground">Relevant Coursework</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {['Data Structures & Algorithms', 'Artificial Intelligence', 'INFORMATION SECURITY', 'OPERATING SYSTEMS', 'OBJECT-ORIENTED PROGRAMMING', 'DATABASE SYS & FILE STRUCTURES', 'SOFTWARE PROJECT MANAGEMENT', 'DISCRETE STRUCTURES', 'FUNDAMENTALS OF SOFTWARE ENGINEERING', 'LINEAR ALGEBRA FOR CSE', 'COMPUTER NETWORK ORGANIZATION'].map((course, index) => <div key={index} className="p-4 rounded-lg text-center text-sm font-medium hover:shadow-lg transition-all hover:scale-105 bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 hover:border-purple-500/40 shadow-lg backdrop-blur-sm">
+                {['DATA STRUCTURES & ALGORITHMS', 'ARTIFICIAL INTELLIGENCE', 'INFORMATION SECURITY', 'OPERATING SYSTEMS', 'OBJECT-ORIENTED PROGRAMMING', 'DATABASE SYS & FILE STRUCTURES', 'SOFTWARE PROJECT MANAGEMENT', 'DISCRETE STRUCTURES', 'FUNDAMENTALS OF SOFTWARE ENGINEERING', 'LINEAR ALGEBRA FOR CSE', 'COMPUTER NETWORK ORGANIZATION'].map((course, index) => <div key={index} className="p-4 rounded-lg text-center text-sm font-medium hover:shadow-lg transition-all hover:scale-105 bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 hover:border-purple-500/40 shadow-lg backdrop-blur-sm">
                     <span className="text-foreground font-semibold">{course}</span>
                   </div>)}
               </div>
@@ -522,8 +522,8 @@ const Portfolio = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
                   <div className="flex items-start gap-4">
-                    <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                      <img src={codepathCert} alt="CodePath Certificate" className="w-full h-full object-cover" />
+                    <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 cursor-pointer" onClick={() => window.open('chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://mail.google.com/mail/u/0?ui=2&ik=9351b70e2c&attid=0.1&permmsgid=msg-f:1808307197405038314&th=191865d0b21c06ea&view=att&disp=inline&realattid=bb2fa5da1e027396_0.1&zw&acrobatPromotionSource=GmailNativeViewer', '_blank')}>
+                      <img src={codepathCert} alt="CodePath Certificate" className="w-full h-full object-cover hover:scale-105 transition-transform" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-lg mb-1 text-foreground">Intermediate Technical Interview Prep Course</h4>
@@ -535,8 +535,8 @@ const Portfolio = () => {
 
                 <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
                   <div className="flex items-start gap-4">
-                    <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                      <img src={globalItCert} alt="Global IT Certificate" className="w-full h-full object-cover" />
+                    <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 cursor-pointer" onClick={() => window.open(globalItCert, '_blank')}>
+                      <img src={globalItCert} alt="Global IT Certificate" className="w-full h-full object-cover hover:scale-105 transition-transform" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-lg mb-1 text-foreground">Graphic Designing</h4>
@@ -548,8 +548,8 @@ const Portfolio = () => {
 
                 <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
                   <div className="flex items-start gap-4">
-                    <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                      <img src={breakthroughCert} alt="Break Through Tech Certificate" className="w-full h-full object-cover" />
+                    <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 cursor-pointer" onClick={() => window.open(breakthroughCert, '_blank')}>
+                      <img src={breakthroughCert} alt="Break Through Tech Certificate" className="w-full h-full object-cover hover:scale-105 transition-transform" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-lg mb-1 text-foreground">Break Through Tech AI Program</h4>
@@ -561,8 +561,8 @@ const Portfolio = () => {
 
                 <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
                   <div className="flex items-start gap-4">
-                    <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                      <img src={goldmanSachsCert} alt="Goldman Sachs Certificate" className="w-full h-full object-cover" />
+                    <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 cursor-pointer" onClick={() => window.open(goldmanSachsCert, '_blank')}>
+                      <img src={goldmanSachsCert} alt="Goldman Sachs Certificate" className="w-full h-full object-cover hover:scale-105 transition-transform" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-lg mb-1 text-foreground">Virtual Insight Series</h4>
