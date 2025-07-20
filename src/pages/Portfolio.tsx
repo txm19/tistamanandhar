@@ -280,13 +280,10 @@ const Portfolio = () => {
                 <Button onClick={() => scrollToSection('contact')} className="btn-primary px-8 py-6 text-lg">
                   Get In Touch
                 </Button>
-                <Button onClick={() => {
-                const link = document.createElement('a');
-                link.href = 'file:///Users/tistamanandhar/Downloads/resipe%20(2).pdf';
-                link.target = '_blank';
-                link.click();
-              }} className="btn-primary px-8 py-6 text-lg">
-                  Download Resume
+                <Button asChild className="btn-primary px-8 py-6 text-lg">
+                  <a href="file:///Users/tistamanandhar/Downloads/resipe%20(2).pdf" target="_blank" rel="noopener noreferrer">
+                    Download Resume
+                  </a>
                 </Button>
               </div>
             </div>
