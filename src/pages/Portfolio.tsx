@@ -500,7 +500,7 @@ const Portfolio = () => {
                 <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   🏆
                 </div>
-                <h4 className="font-semibold text-lg mb-2 text-foreground">Best Use of MongoDB – HackUTA 6</h4>
+                <h4 className="font-semibold text-lg mb-2 text-foreground">Best Use of MongoDB – HackUTA 6 (2024)</h4>
                 <p className="text-sm text-muted-foreground">Built SnApply, a MERN stack job app platform with voice support and dynamic MongoDB integration.</p>
               </Card>
             </div>
