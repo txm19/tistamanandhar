@@ -283,7 +283,6 @@ const Portfolio = () => {
                 <Button onClick={() => {
                 const link = document.createElement('a');
                 link.href = 'file:///Users/tistamanandhar/Downloads/resipe%20(2).pdf';
-                link.download = 'Tista_Manandhar_Resume.pdf';
                 link.target = '_blank';
                 link.click();
               }} className="btn-primary px-8 py-6 text-lg">
