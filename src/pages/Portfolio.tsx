@@ -282,7 +282,7 @@ const Portfolio = () => {
                 </Button>
                 <Button onClick={() => {
                 const link = document.createElement('a');
-                link.href = 'https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:e85ef68c-f1a4-40fb-8fec-c3ae8b93bafc';
+                link.href = 'https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:9f356927-432d-47e1-bd87-7b30f21a56be';
                 link.download = 'Tista_Manandhar_Resume.pdf';
                 link.target = '_blank';
                 link.click();
@@ -472,7 +472,7 @@ const Portfolio = () => {
             </Card>
 
             {/* Achievement Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Card className="p-6 text-center hover:shadow-lg transition-shadow border-primary/20 bg-primary/5">
                 <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Globe className="h-6 w-6 text-primary" />
@@ -496,14 +496,22 @@ const Portfolio = () => {
                 <h4 className="font-semibold text-lg mb-2 text-foreground">Maverick Recognition Scholarship</h4>
                 <p className="text-sm text-muted-foreground">Earned the Maverick Recognition Scholarship for demonstrating strong academic excellence and university engagement.</p>
               </Card>
+              
+              <Card className="p-6 text-center hover:shadow-lg transition-shadow border-accent/20 bg-accent/5">
+                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  🏆
+                </div>
+                <h4 className="font-semibold text-lg mb-2 text-foreground">Best Use of MongoDB – HackUTA 6</h4>
+                <p className="text-sm text-muted-foreground">Built SnApply, a MERN stack job app platform with voice support and dynamic MongoDB integration.</p>
+              </Card>
             </div>
 
             {/* Relevant Coursework */}
             <div className="mb-8">
               <h3 className="text-xl font-bold mb-6 text-foreground">Relevant Coursework</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {['Data Structures & Algorithms', 'Software Engineering', 'Database Systems', 'Operating Systems', 'Computer Networks', 'Machine Learning', 'Web Development', 'Computer Architecture', 'Software Design Patterns', 'Cybersecurity Fundamentals'].map((course, index) => <div key={index} className="p-4 rounded-lg text-center text-sm font-medium hover:shadow-lg transition-all hover:scale-105 bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 hover:border-primary/40">
-                    <span className="text-foreground">{course}</span>
+                {['Data Structures & Algorithms', 'Artificial Intelligence', 'INFORMATION SECURITY', 'OPERATING SYSTEMS', 'OBJECT-ORIENTED PROGRAMMING', 'DATABASE SYS & FILE STRUCTURES', 'SOFTWARE PROJECT MANAGEMENT', 'DISCRETE STRUCTURES', 'FUNDAMENTALS OF SOFTWARE ENGINEERING', 'LINEAR ALGEBRA FOR CSE', 'COMPUTER NETWORK ORGANIZATION'].map((course, index) => <div key={index} className="p-4 rounded-lg text-center text-sm font-medium hover:shadow-lg transition-all hover:scale-105 bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 hover:border-purple-500/40 shadow-lg backdrop-blur-sm">
+                    <span className="text-foreground font-semibold">{course}</span>
                   </div>)}
               </div>
             </div>
@@ -514,7 +522,7 @@ const Portfolio = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
                   <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                    <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
                       <img src={codepathCert} alt="CodePath Certificate" className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1">
@@ -527,7 +535,7 @@ const Portfolio = () => {
 
                 <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
                   <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                    <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
                       <img src={globalItCert} alt="Global IT Certificate" className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1">
@@ -540,7 +548,7 @@ const Portfolio = () => {
 
                 <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
                   <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                    <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
                       <img src={breakthroughCert} alt="Break Through Tech Certificate" className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1">
@@ -553,7 +561,7 @@ const Portfolio = () => {
 
                 <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
                   <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                    <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
                       <img src={goldmanSachsCert} alt="Goldman Sachs Certificate" className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1">
