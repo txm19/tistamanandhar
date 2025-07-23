@@ -343,6 +343,16 @@ const Portfolio = () => {
                 </CardContent>
               </Card>)}
           </div>
+          
+          {/* View All Projects Button */}
+          <div className="text-center mt-12">
+            <Button asChild variant="outline" className="px-8 py-6 text-lg border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300">
+              <a href="https://github.com/txm19?tab=repositories" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+                <Github className="h-5 w-5" />
+                View All Projects on GitHub
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
