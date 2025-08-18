@@ -61,6 +61,13 @@ const Portfolio = () => {
     demo: '#',
     image: snapplyImage
   }, {
+    title: 'QuickCab',
+    description: 'Engineered a cross-platform ride-hailing app with real-time GPS tracking, reducing booking friction by 40%. Integrated Google Maps API and Places Autocomplete for dynamic location search and route visualization.',
+    techStack: ['TypeScript', 'JavaScript', 'PostgreSQL', 'NeonDB', 'Expo', 'Stripe', 'Tailwind', 'Clerk'],
+    link: 'https://github.com/txm19/QuickCab',
+    demo: 'https://www.youtube.com/shorts/W6gXn4lUsfg',
+    image: snapplyImage
+  }, {
     title: 'Celestial Connect',
     description: 'Real-time social media app with compatibility analysis tool using natal charts for enhanced user connections.',
     techStack: ['React', 'Socket.io', 'Node.js', 'PostgreSQL'],
@@ -68,11 +75,11 @@ const Portfolio = () => {
     demo: '#',
     image: celestialImage
   }, {
-    title: 'PenDigits Classifier',
-    description: 'Python-based k-NN and Naive Bayes pipeline achieving 95%+ accuracy on handwritten digit recognition.',
-    techStack: ['Python', 'scikit-learn', 'NumPy', 'Matplotlib'],
-    link: 'https://github.com/txm19/pendigits-knn-and-bayes',
-    demo: '#',
+    title: 'News Authenticity Classifier',
+    description: 'Built a machine learning web app to detect fake news, achieving 99–100% accuracy across models (LR, DTC, RFC, GBC) on 44k+ articles. Engineered an ensemble classification pipeline with TF-IDF + scikit-learn.',
+    techStack: ['Python', 'Flask', 'scikit-learn', 'ngrok', 'HTML/CSS'],
+    link: 'https://github.com/txm19/NewsAuthenticityClassifier',
+    demo: 'https://www.youtube.com/watch?v=yLi1AeJiZlA',
     image: pendigitsImage
   }, {
     title: 'TPC-H Benchmarking',
@@ -81,13 +88,6 @@ const Portfolio = () => {
     link: '#',
     demo: '#',
     image: tpchImage
-  }, {
-    title: 'Lottery Scheduler & Filesystem',
-    description: 'Kernel programming projects improving process scheduling and file encryption in xv6 OS.',
-    techStack: ['C', 'xv6 OS', 'Kernel Development'],
-    link: 'https://github.com/txm19/lottery-scheduler',
-    demo: '#',
-    image: lotteryImage
   }, {
     title: '8-Puzzle Solver',
     description: 'AI search algorithms implementation for solving 8-puzzle using A*, BFS, DFS, and other search strategies.',
