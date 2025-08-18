@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail, Phone, ExternalLink, MapPin, Calendar, Code, Briefcase, GraduationCap, User, Send, Users, BarChart3, BookOpen, Megaphone, Award, Star, Globe, Server, Database, Palette, Brain, Monitor, Smartphone, Cloud, Shield, GitBranch, FileCode, Coffee, Heart, Users2, Target, Zap, Lightbulb } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Phone, ExternalLink, MapPin, Calendar, Code, Briefcase, GraduationCap, User, Send, Users, BarChart3, BookOpen, Megaphone, Award, Star, Globe, Server, Database, Palette, Brain, Monitor, Smartphone, Cloud, Shield, GitBranch, FileCode, Coffee, Heart, Users2, Target, Zap, Lightbulb, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -14,7 +14,8 @@ import breakthroughCert from '@/assets/breakthrough-cert.png';
 import goldmanSachsCert from '@/assets/goldman-sachs-cert.png';
 import snapplyImage from '@/assets/snapply-screenshot.png';
 import celestialImage from '@/assets/celestial-connect.jpg';
-import pendigitsImage from '@/assets/pendigits-classifier.jpg';
+import quickcabImage from '@/assets/quickcab-screenshot.jpg';
+import newsAuthenticityImage from '@/assets/news-authenticity-screenshot.jpg';
 import tpchImage from '@/assets/tpc-h-benchmark.jpg';
 import lotteryImage from '@/assets/lottery-scheduler.png';
 import puzzleImage from '@/assets/8-puzzle-solver.jpg';
@@ -58,7 +59,7 @@ const Portfolio = () => {
     description: 'MERN stack voice-assisted job application platform with speech-to-text/text-to-speech capabilities and secure user profiles.',
     techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Speech API'],
     link: 'https://github.com/txm19/SnApply',
-    demo: '#',
+    demo: 'https://drive.google.com/file/d/1sC1fgm1REx4BVBn8ilPUv0p7XvsFlyDb/view',
     image: snapplyImage
   }, {
     title: 'QuickCab',
@@ -66,13 +67,13 @@ const Portfolio = () => {
     techStack: ['TypeScript', 'JavaScript', 'PostgreSQL', 'NeonDB', 'Expo', 'Stripe', 'Tailwind', 'Clerk'],
     link: 'https://github.com/txm19/QuickCab',
     demo: 'https://www.youtube.com/shorts/W6gXn4lUsfg',
-    image: snapplyImage
+    image: quickcabImage
   }, {
     title: 'Celestial Connect',
     description: 'Real-time social media app with compatibility analysis tool using natal charts for enhanced user connections.',
     techStack: ['React', 'Socket.io', 'Node.js', 'PostgreSQL'],
     link: 'https://github.com/txm19/CelestialConnectApp',
-    demo: '#',
+    demo: 'https://www.youtube.com/watch?v=RLPchgTPpd4',
     image: celestialImage
   }, {
     title: 'News Authenticity Classifier',
@@ -80,7 +81,7 @@ const Portfolio = () => {
     techStack: ['Python', 'Flask', 'scikit-learn', 'ngrok', 'HTML/CSS'],
     link: 'https://github.com/txm19/NewsAuthenticityClassifier',
     demo: 'https://www.youtube.com/watch?v=yLi1AeJiZlA',
-    image: pendigitsImage
+    image: newsAuthenticityImage
   }, {
     title: 'TPC-H Benchmarking',
     description: 'MySQL database performance profiling and optimization study with comprehensive analysis.',
@@ -315,16 +316,20 @@ const Portfolio = () => {
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-xl">{project.title}</CardTitle>
                     <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm" asChild>
-                        <a href={project.link} target="_blank" rel="noopener noreferrer">
-                          <Github className="h-4 w-4" />
-                        </a>
-                      </Button>
-                      <Button variant="ghost" size="sm" asChild>
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4" />
-                        </a>
-                      </Button>
+                      {project.link !== '#' && (
+                        <Button variant="ghost" size="sm" asChild>
+                          <a href={project.link} target="_blank" rel="noopener noreferrer">
+                            <Github className="h-4 w-4" />
+                          </a>
+                        </Button>
+                      )}
+                      {project.demo !== '#' && (
+                        <Button variant="ghost" size="sm" asChild>
+                          <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                            <Play className="h-4 w-4" />
+                          </a>
+                        </Button>
+                      )}
                     </div>
                   </div>
                 </CardHeader>
