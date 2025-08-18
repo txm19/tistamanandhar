@@ -55,26 +55,12 @@ const Portfolio = () => {
     label: 'Contact'
   }];
   const projects = [{
-    title: 'SnApply',
-    description: 'MERN stack voice-assisted job application platform with speech-to-text/text-to-speech capabilities and secure user profiles.',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Speech API'],
-    link: 'https://github.com/txm19/SnApply',
-    demo: 'https://drive.google.com/file/d/1sC1fgm1REx4BVBn8ilPUv0p7XvsFlyDb/view',
-    image: snapplyImage
-  }, {
     title: 'QuickCab',
     description: 'Engineered a cross-platform ride-hailing app with real-time GPS tracking, reducing booking friction by 40%. Integrated Google Maps API and Places Autocomplete for dynamic location search and route visualization.',
     techStack: ['TypeScript', 'JavaScript', 'PostgreSQL', 'NeonDB', 'Expo', 'Stripe', 'Tailwind', 'Clerk'],
     link: 'https://github.com/txm19/QuickCab',
     demo: 'https://www.youtube.com/shorts/W6gXn4lUsfg',
     image: quickcabImage
-  }, {
-    title: 'Celestial Connect',
-    description: 'Real-time social media app with compatibility analysis tool using natal charts for enhanced user connections.',
-    techStack: ['React', 'Socket.io', 'Node.js', 'PostgreSQL'],
-    link: 'https://github.com/txm19/CelestialConnectApp',
-    demo: 'https://www.youtube.com/watch?v=RLPchgTPpd4',
-    image: celestialImage
   }, {
     title: 'News Authenticity Classifier',
     description: 'Built a machine learning web app to detect fake news, achieving 99–100% accuracy across models (LR, DTC, RFC, GBC) on 44k+ articles. Engineered an ensemble classification pipeline with TF-IDF + scikit-learn.',
@@ -83,12 +69,19 @@ const Portfolio = () => {
     demo: 'https://www.youtube.com/watch?v=yLi1AeJiZlA',
     image: newsAuthenticityImage
   }, {
-    title: 'TPC-H Benchmarking',
-    description: 'MySQL database performance profiling and optimization study with comprehensive analysis.',
-    techStack: ['MySQL', 'Python', 'Data Analysis'],
-    link: '#',
-    demo: '#',
-    image: tpchImage
+    title: 'SnApply',
+    description: 'MERN stack voice-assisted job application platform with speech-to-text/text-to-speech capabilities and secure user profiles.',
+    techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Speech API'],
+    link: 'https://github.com/txm19/SnApply',
+    demo: 'https://drive.google.com/file/d/1sC1fgm1REx4BVBn8ilPUv0p7XvsFlyDb/view',
+    image: snapplyImage
+  }, {
+    title: 'Celestial Connect',
+    description: 'Real-time social media app with compatibility analysis tool using natal charts for enhanced user connections.',
+    techStack: ['React', 'Socket.io', 'Node.js', 'PostgreSQL'],
+    link: 'https://github.com/txm19/CelestialConnectApp',
+    demo: 'https://www.youtube.com/watch?v=RLPchgTPpd4',
+    image: celestialImage
   }, {
     title: '8-Puzzle Solver',
     description: 'AI search algorithms implementation for solving 8-puzzle using A*, BFS, DFS, and other search strategies.',
@@ -96,6 +89,13 @@ const Portfolio = () => {
     link: 'https://github.com/txm19/8-puzzle-solver',
     demo: '#',
     image: puzzleImage
+  }, {
+    title: 'TPC-H Benchmarking',
+    description: 'MySQL database performance profiling and optimization study with comprehensive analysis.',
+    techStack: ['MySQL', 'Python', 'Data Analysis'],
+    link: '#',
+    demo: '#',
+    image: tpchImage
   }];
   const experiences = [{
     title: 'International Student Assistant',
@@ -316,7 +316,7 @@ const Portfolio = () => {
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-xl">{project.title}</CardTitle>
                     <div className="flex space-x-2">
-                      {project.link !== '#' && (
+                      {(project.link !== '#' || project.title === 'TPC-H Benchmarking') && (
                         <Button variant="ghost" size="sm" asChild>
                           <a href={project.link} target="_blank" rel="noopener noreferrer">
                             <Github className="h-4 w-4" />
