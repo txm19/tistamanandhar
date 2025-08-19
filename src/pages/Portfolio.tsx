@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
+import TechSphere from '@/components/TechSphere';
 import profileImage from '@/assets/tista-profile-new.jpg';
 import utaLogo from '@/assets/uta-logo.png';
 import apHonors from '@/assets/ap-honors.jpg';
@@ -439,6 +440,13 @@ const Portfolio = () => {
                 </CardContent>
               </Card>)}
           </div>
+        </div>
+      </section>
+
+      {/* Tech Stack 3D Sphere */}
+      <section className="py-20 px-4 bg-muted/30">
+        <div className="max-w-7xl mx-auto">
+          <TechSphere />
         </div>
       </section>
 
