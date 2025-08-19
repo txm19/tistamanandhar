@@ -10,7 +10,7 @@ import utaLogo from '@/assets/uta-logo.png';
 import apHonors from '@/assets/ap-honors.jpg';
 import codepathCert from '@/assets/codepath-cert.png';
 import globalItCert from '@/assets/global-it-cert.png';
-const breakthroughCert = 'https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:53e953ee-d431-419a-b4c9-ca008e64f7cc';
+const breakthroughCert = 'https://i.postimg.cc/LsZgqWrt/Cornell-Certificate.png';
 import goldmanSachsCert from '@/assets/goldman-sachs-cert.png';
 import snapplyImage from '@/assets/snapply-screenshot.png';
 import celestialImage from '@/assets/celestial-connect.jpg';
@@ -533,7 +533,7 @@ const Portfolio = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
                   <div className="flex items-start gap-4">
-                    <div className="w-32 h-32 rounded-lg overflow-hidden flex-shrink-0 cursor-pointer" onClick={() => window.open(codepathCert, '_blank')}>
+                    <div className="w-64 h-64 rounded-lg overflow-hidden flex-shrink-0 cursor-pointer" onClick={() => window.open(codepathCert, '_blank')}>
                       <img src={codepathCert} alt="CodePath Certificate" className="w-full h-full object-cover hover:scale-105 transition-transform" />
                     </div>
                     <div className="flex-1">
@@ -546,7 +546,7 @@ const Portfolio = () => {
 
                 <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
                   <div className="flex items-start gap-4">
-                    <div className="w-32 h-32 rounded-lg overflow-hidden flex-shrink-0 cursor-pointer" onClick={() => window.open(globalItCert, '_blank')}>
+                    <div className="w-64 h-64 rounded-lg overflow-hidden flex-shrink-0 cursor-pointer" onClick={() => window.open(globalItCert, '_blank')}>
                       <img src={globalItCert} alt="Global IT Certificate" className="w-full h-full object-cover hover:scale-105 transition-transform" />
                     </div>
                     <div className="flex-1">
@@ -559,7 +559,7 @@ const Portfolio = () => {
 
                 <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
                   <div className="flex items-start gap-4">
-                    <div className="w-32 h-32 rounded-lg overflow-hidden flex-shrink-0 cursor-pointer" onClick={() => window.open(breakthroughCert, '_blank')}>
+                    <div className="w-64 h-64 rounded-lg overflow-hidden flex-shrink-0 cursor-pointer" onClick={() => window.open(breakthroughCert, '_blank')}>
                       <img src={breakthroughCert} alt="Break Through Tech Certificate" className="w-full h-full object-cover hover:scale-105 transition-transform" />
                     </div>
                     <div className="flex-1">
@@ -572,7 +572,7 @@ const Portfolio = () => {
 
                 <Card className="p-6 hover:shadow-lg transition-shadow bg-card border-border/30">
                   <div className="flex items-start gap-4">
-                    <div className="w-32 h-32 rounded-lg overflow-hidden flex-shrink-0 cursor-pointer" onClick={() => window.open(goldmanSachsCert, '_blank')}>
+                    <div className="w-64 h-64 rounded-lg overflow-hidden flex-shrink-0 cursor-pointer" onClick={() => window.open(goldmanSachsCert, '_blank')}>
                       <img src={goldmanSachsCert} alt="Goldman Sachs Certificate" className="w-full h-full object-cover hover:scale-105 transition-transform" />
                     </div>
                     <div className="flex-1">
