@@ -1,105 +1,149 @@
-import { useRef, useMemo } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Text, PerspectiveCamera } from '@react-three/drei';
+import { Html, OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
+import { 
+  Code, Database, Globe, Cpu, Server, Container, 
+  BarChart3, GitBranch, Github, Cloud, FileCode, 
+  BookOpen, Settings, Layers, Brain, Zap
+} from 'lucide-react';
 
-interface TechNodeProps {
-  position: [number, number, number];
-  text: string;
+interface TechIcon {
+  name: string;
   color: string;
+  position: [number, number, number];
+  icon: React.ComponentType<any>;
 }
 
-const TechNode = ({ position, text, color }: TechNodeProps) => {
-  const meshRef = useRef<THREE.Group>(null);
-
+const TechIconMesh: React.FC<{ icon: TechIcon }> = ({ icon }) => {
+  const meshRef = useRef<THREE.Mesh>(null);
+  
   useFrame((state) => {
     if (meshRef.current) {
-      // Rotate the entire sphere slowly
-      meshRef.current.rotation.y = state.clock.elapsedTime * 0.3;
-      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.2) * 0.1;
+      meshRef.current.lookAt(state.camera.position);
     }
   });
 
+  const IconComponent = icon.icon;
+
   return (
-    <group ref={meshRef}>
-      <Text
-        position={position}
-        fontSize={0.4}
-        color={color}
-        anchorX="center"
-        anchorY="middle"
-        font="/fonts/inter-bold.woff"
+    <mesh ref={meshRef} position={icon.position}>
+      <Html
+        transform
+        occlude
+        position={[0, 0, 0]}
+        style={{
+          pointerEvents: 'none',
+          userSelect: 'none',
+        }}
       >
-        {text}
-      </Text>
+        <div className="flex items-center justify-center w-12 h-12 rounded-lg shadow-lg transform-gpu"
+             style={{ backgroundColor: icon.color }}>
+          <IconComponent 
+            size={24} 
+            color="white" 
+            strokeWidth={2}
+          />
+        </div>
+      </Html>
+    </mesh>
+  );
+};
+
+const RotatingSphere: React.FC = () => {
+  const groupRef = useRef<THREE.Group>(null);
+  
+  useFrame(() => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y += 0.005;
+      groupRef.current.rotation.x += 0.002;
+    }
+  });
+
+  const techIcons: TechIcon[] = useMemo(() => {
+    const skills = [
+      { name: 'Python', color: '#3776ab', icon: Code },
+      { name: 'Java', color: '#f89820', icon: Cpu },
+      { name: 'JavaScript', color: '#f7df1e', icon: FileCode },
+      { name: 'C++', color: '#00599c', icon: Zap },
+      { name: 'React', color: '#61dafb', icon: Layers },
+      { name: 'Node.js', color: '#339933', icon: Server },
+      { name: 'HTML', color: '#e34f26', icon: Globe },
+      { name: 'CSS', color: '#1572b6', icon: Settings },
+      { name: 'Flask', color: '#000000', icon: Server },
+      { name: 'MySQL', color: '#4479a1', icon: Database },
+      { name: 'MongoDB', color: '#47a248', icon: Database },
+      { name: 'Docker', color: '#2496ed', icon: Container },
+      { name: 'pandas', color: '#150458', icon: BarChart3 },
+      { name: 'NumPy', color: '#013243', icon: Brain },
+      { name: 'Git', color: '#f05032', icon: GitBranch },
+      { name: 'GitHub', color: '#181717', icon: Github },
+      { name: 'Jenkins', color: '#d33833', icon: Settings },
+      { name: 'GCP', color: '#4285f4', icon: Cloud },
+      { name: 'VS Code', color: '#007acc', icon: FileCode },
+      { name: 'Jupyter', color: '#f37626', icon: BookOpen },
+    ];
+
+    const radius = 4;
+    const icons: TechIcon[] = [];
+    
+    skills.forEach((skill, index) => {
+      const phi = Math.acos(-1 + (2 * index) / skills.length);
+      const theta = Math.sqrt(skills.length * Math.PI) * phi;
+      
+      const x = radius * Math.cos(theta) * Math.sin(phi);
+      const y = radius * Math.sin(theta) * Math.sin(phi);
+      const z = radius * Math.cos(phi);
+      
+      icons.push({
+        name: skill.name,
+        color: skill.color,
+        position: [x, y, z],
+        icon: skill.icon,
+      });
+    });
+    
+    return icons;
+  }, []);
+
+  return (
+    <group ref={groupRef}>
+      {techIcons.map((icon, index) => (
+        <TechIconMesh key={index} icon={icon} />
+      ))}
     </group>
   );
 };
 
-const TechSphere = () => {
-  const techStack = [
-    { name: 'React', color: '#61DAFB' },
-    { name: 'TypeScript', color: '#3178C6' },
-    { name: 'Python', color: '#3776AB' },
-    { name: 'Java', color: '#ED8B00' },
-    { name: 'Node.js', color: '#68A063' },
-    { name: 'JavaScript', color: '#F7DF1E' },
-    { name: 'Docker', color: '#2496ED' },
-    { name: 'AWS', color: '#FF9900' },
-    { name: 'MongoDB', color: '#47A248' },
-    { name: 'PostgreSQL', color: '#336791' },
-    { name: 'Git', color: '#F05032' },
-    { name: 'Flask', color: '#000000' },
-    { name: 'Express', color: '#000000' },
-    { name: 'Tailwind', color: '#06B6D4' },
-    { name: 'Three.js', color: '#000000' },
-    { name: 'C++', color: '#00599C' },
-    { name: 'HTML', color: '#E34F26' },
-    { name: 'CSS', color: '#1572B6' },
-    { name: 'GraphQL', color: '#E10098' },
-    { name: 'SQL', color: '#4479A1' },
-  ];
-
-  const spherePositions = useMemo(() => {
-    const positions: [number, number, number][] = [];
-    const radius = 8;
-    
-    techStack.forEach((_, index) => {
-      // Distribute points on sphere using golden spiral
-      const y = 1 - (index / (techStack.length - 1)) * 2;
-      const radiusAtY = Math.sqrt(1 - y * y);
-      const theta = (index * 137.508 * Math.PI) / 180; // Golden angle
-
-      const x = Math.cos(theta) * radiusAtY * radius;
-      const z = Math.sin(theta) * radiusAtY * radius;
-
-      positions.push([x, y * radius, z]);
-    });
-
-    return positions;
-  }, [techStack.length]);
-
+const TechSphere: React.FC = () => {
   return (
-    <div className="w-full h-[600px] relative">
-      <Canvas>
-        <PerspectiveCamera makeDefault position={[0, 0, 20]} />
-        <ambientLight intensity={0.6} />
-        <pointLight position={[10, 10, 10]} intensity={1} />
+    <div className="w-full h-[600px] bg-gradient-to-b from-background to-muted/20">
+      <div className="container mx-auto px-6 py-20">
+        <div className="text-center mb-12">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">Technology Universe</h3>
+          <p className="text-lg text-muted-foreground">
+            Interactive 3D visualization of my technical skills
+          </p>
+        </div>
         
-        {techStack.map((tech, index) => (
-          <TechNode
-            key={tech.name}
-            position={spherePositions[index]}
-            text={tech.name}
-            color={tech.color}
+        <Canvas
+          camera={{ position: [0, 0, 10], fov: 60 }}
+          style={{ height: '400px' }}
+        >
+          <ambientLight intensity={0.5} />
+          <pointLight position={[10, 10, 10]} intensity={1} />
+          <RotatingSphere />
+          <OrbitControls 
+            enablePan={false}
+            enableZoom={true}
+            maxDistance={20}
+            minDistance={5}
+            autoRotate={false}
           />
-        ))}
-      </Canvas>
-      
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-center">
-          <h3 className="text-2xl font-bold text-foreground mb-2">Tech Stack Universe</h3>
-          <p className="text-muted-foreground">Interactive 3D visualization of my technical skills</p>
+        </Canvas>
+        
+        <div className="text-center mt-8 text-sm text-muted-foreground">
+          <p>Click and drag to explore • Scroll to zoom</p>
         </div>
       </div>
     </div>
