@@ -7,23 +7,31 @@ import * as THREE from 'three';
 import pythonLogo from '../assets/logos/python.svg';
 import javaLogo from '../assets/logos/java.svg';
 import javascriptLogo from '../assets/logos/javascript.svg';
+import typescriptLogo from '../assets/logos/typescript.svg';
 import cppLogo from '../assets/logos/cpp.svg';
+import sqlLogo from '../assets/logos/sql.svg';
 import reactLogo from '../assets/logos/react.svg';
 import nodejsLogo from '../assets/logos/nodejs.svg';
+import flaskLogo from '../assets/logos/flask.svg';
+import fastapiLogo from '../assets/logos/fastapi.svg';
+import expressLogo from '../assets/logos/express.svg';
+import materialuiLogo from '../assets/logos/materialui.svg';
 import html5Logo from '../assets/logos/html5.svg';
 import css3Logo from '../assets/logos/css3.svg';
-import flaskLogo from '../assets/logos/flask.svg';
-import mysqlLogo from '../assets/logos/mysql.svg';
-import mongodbLogo from '../assets/logos/mongodb.svg';
-import dockerLogo from '../assets/logos/docker.svg';
-import pandasLogo from '../assets/logos/pandas.svg';
-import numpyLogo from '../assets/logos/numpy.svg';
+import tailwindLogo from '../assets/logos/tailwind.svg';
 import gitLogo from '../assets/logos/git.svg';
-import githubLogo from '../assets/logos/github.svg';
+import dockerLogo from '../assets/logos/docker.svg';
 import jenkinsLogo from '../assets/logos/jenkins.svg';
 import gcpLogo from '../assets/logos/gcp.svg';
-import vscodeLogo from '../assets/logos/vscode.svg';
-import jupyterLogo from '../assets/logos/jupyter.svg';
+import awsLogo from '../assets/logos/aws.svg';
+import mongodbLogo from '../assets/logos/mongodb.svg';
+import pandasLogo from '../assets/logos/pandas.svg';
+import numpyLogo from '../assets/logos/numpy.svg';
+import matplotlibLogo from '../assets/logos/matplotlib.svg';
+import seabornLogo from '../assets/logos/seaborn.svg';
+import sklearnLogo from '../assets/logos/sklearn.svg';
+import restApiLogo from '../assets/logos/rest-api.png';
+import graphqlLogo from '../assets/logos/graphql.svg';
 
 interface TechIcon {
   name: string;
@@ -76,26 +84,43 @@ const RotatingSphere: React.FC = () => {
 
   const techIcons: TechIcon[] = useMemo(() => {
     const skills = [
+      // Programming Languages
       { name: 'Python', logo: pythonLogo },
       { name: 'Java', logo: javaLogo },
+      { name: 'C/C++', logo: cppLogo },
       { name: 'JavaScript', logo: javascriptLogo },
-      { name: 'C++', logo: cppLogo },
+      { name: 'TypeScript', logo: typescriptLogo },
+      { name: 'SQL', logo: sqlLogo },
+      
+      // Frameworks & Libraries
       { name: 'React', logo: reactLogo },
       { name: 'Node.js', logo: nodejsLogo },
-      { name: 'HTML5', logo: html5Logo },
-      { name: 'CSS3', logo: css3Logo },
       { name: 'Flask', logo: flaskLogo },
-      { name: 'MySQL', logo: mysqlLogo },
-      { name: 'MongoDB', logo: mongodbLogo },
-      { name: 'Docker', logo: dockerLogo },
-      { name: 'pandas', logo: pandasLogo },
-      { name: 'NumPy', logo: numpyLogo },
+      { name: 'FastAPI', logo: fastapiLogo },
+      { name: 'Express', logo: expressLogo },
+      { name: 'Material-UI', logo: materialuiLogo },
+      
+      // Tools & Platforms
       { name: 'Git', logo: gitLogo },
-      { name: 'GitHub', logo: githubLogo },
+      { name: 'Docker', logo: dockerLogo },
       { name: 'Jenkins', logo: jenkinsLogo },
       { name: 'GCP', logo: gcpLogo },
-      { name: 'VS Code', logo: vscodeLogo },
-      { name: 'Jupyter', logo: jupyterLogo },
+      { name: 'AWS', logo: awsLogo },
+      { name: 'MongoDB', logo: mongodbLogo },
+      
+      // Data Analysis
+      { name: 'pandas', logo: pandasLogo },
+      { name: 'NumPy', logo: numpyLogo },
+      { name: 'Matplotlib', logo: matplotlibLogo },
+      { name: 'Seaborn', logo: seabornLogo },
+      { name: 'scikit-learn', logo: sklearnLogo },
+      
+      // Web Development
+      { name: 'HTML', logo: html5Logo },
+      { name: 'CSS', logo: css3Logo },
+      { name: 'Tailwind CSS', logo: tailwindLogo },
+      { name: 'REST APIs', logo: restApiLogo },
+      { name: 'GraphQL', logo: graphqlLogo },
     ];
 
     const radius = 4;
