@@ -413,6 +413,13 @@ const Portfolio = () => {
         </div>
       </section>
 
+      {/* Tech Stack 3D Sphere */}
+      <section className="py-20 px-4 bg-muted/30">
+        <div className="max-w-7xl mx-auto">
+          <TechSphere />
+        </div>
+      </section>
+
       {/* Skills Section */}
       <section id="skills" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
@@ -440,13 +447,6 @@ const Portfolio = () => {
                 </CardContent>
               </Card>)}
           </div>
-        </div>
-      </section>
-
-      {/* Tech Stack 3D Sphere */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
-          <TechSphere />
         </div>
       </section>
 
