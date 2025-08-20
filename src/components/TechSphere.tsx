@@ -173,15 +173,13 @@ const TechSphere: React.FC = () => {
           <RotatingSphere />
           <OrbitControls 
             enablePan={false}
-            enableZoom={true}
-            maxDistance={20}
-            minDistance={5}
+            enableZoom={false}
             autoRotate={false}
           />
         </Canvas>
         
         <div className="text-center mt-8 text-sm text-muted-foreground">
-          <p>Click and drag to explore • Scroll to zoom</p>
+          <p>Click and drag to explore the technologies</p>
         </div>
       </div>
     </div>
